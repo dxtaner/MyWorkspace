@@ -350,3 +350,34 @@ WHERE Country = 'Brazil';
 SELECT * FROM [Brazil Customers];
 
 DROP VIEW [Brazil Customers];
+
+
+------ String Data Types -----
+
+char(n)	Fixed width character string	
+varchar(n)	Variable width character string	
+varchar(max)	Variable width character string	
+text	Variable width character string	
+nchar	Fixed width Unicode string	
+nvarchar	Variable width Unicode string	
+nvarchar(max)	Variable width Unicode string	
+ntext	Variable width Unicode string	
+binary(n)	Fixed width binary string	
+varbinary	Variable width binary string	
+varbinary(max)	Variable width binary string	
+image	Variable width binary string	
+
+bit	Integer that can be 0, 1, or NULL
+tinyint	Allows whole numbers from 0 to 255
+smallint	Allows whole numbers between -32,768 and 32,767
+int	Allows whole numbers between -2,147,483,648 and 2,147,483,647
+bigint	Allows whole numbers between -9,223,372,036,854,775,808 and 9,223,372,036,854,775,807
+float(n)	Floating precision number data from -1.79E + 308 to 1.79E + 308.
+
+datetime	From January 1, 1753 to December 31, 9999 with an accuracy of 3.33 milliseconds
+datetime2	From January 1, 0001 to December 31, 9999 with an accuracy of 100 nanoseconds
+date	Store a date only. From January 1, 0001 to December 31, 9999
+time	Store a time only to an accuracy of 100 nanoseconds
+timestamp	Stores a unique number that gets updated every time a row gets created or modified.
+The timestamp value is based upon an internal clock and does not correspond to real time. Each 
+table may have only one timestamp variable
