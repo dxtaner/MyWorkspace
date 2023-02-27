@@ -340,3 +340,13 @@ CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
 AS
 SELECT * FROM Customers WHERE City = @City
 GO;
+
+--- View --- 
+CREATE VIEW [Brazil Customers] AS
+SELECT CustomerName, ContactName
+FROM Customers
+WHERE Country = 'Brazil';
+
+SELECT * FROM [Brazil Customers];
+
+DROP VIEW [Brazil Customers];
