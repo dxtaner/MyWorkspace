@@ -1,6 +1,7 @@
 ---- Db Operations --------
 CREATE DATABASE testDB;
 DROP DATABASE testDB;
+
 CREATE TABLE Persons (
     PersonID int,
     LastName varchar(255),
@@ -8,10 +9,34 @@ CREATE TABLE Persons (
     Address varchar(255),
     City varchar(255)
 );
-DROP TABLE Shippers;
+DROP TABLE Persons;
 TRUNCATE TABLE Persons // içesindeki verileri siler
+
 ALTER TABLE Customers
 ADD Email varchar(255);
+
+ALTER TABLE Customers
+DROP COLUMN Email;
+
+ALTER TABLE Persons
+ALTER COLUMN DateOfBirth year;
+
+-- Unique ---
+CREATE TABLE Persons (
+    ID int NOT NULL UNIQUE,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+);
+
+ALTER TABLE Persons
+ADD UNIQUE (ID);
+
+ALTER TABLE Persons
+ADD CONSTRAINT UC_Person UNIQUE (ID,LastName);
+
+ALTER TABLE Persons
+DROP CONSTRAINT UC_Person;
 
 -- PRIMARY Key ----
 CREATE TABLE Persons (
@@ -21,8 +46,10 @@ CREATE TABLE Persons (
     Age int,
     CONSTRAINT PK_Person PRIMARY KEY (ID,LastName)
 );
+
 ALTER TABLE Persons
 ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName);
+
 ALTER TABLE Persons
 DROP CONSTRAINT PK_Person;
 
@@ -34,9 +61,11 @@ CREATE TABLE Orders (
     PRIMARY KEY (OrderID),
     FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
 );
+
 ALTER TABLE Orders
 ADD CONSTRAINT FK_PersonOrder
 FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
 ALTER TABLE Orders
 DROP CONSTRAINT FK_PersonOrder;
 
