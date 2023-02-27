@@ -1,0 +1,14 @@
+Docker Nedir ?
+Docker, yazılım uygulamalarının geliştirilmesi, dağıtımı ve çalıştırılması 
+için kullanılan bir yazılım platformudur. Docker, uygulamaları önceden
+yapılandırılmış ortamlarda (konteynerlerde) çalıştırmayı ve böylece uygulamanın
+farklı bilgisayarlarda ve sunucularda çalışmasını kolaylaştırmayı amaçlar.
+
+Docker, uygulama geliştiricilerinin, uygulamaları hızlı ve güvenli bir şekilde 
+paketlemesini, taşımasını ve dağıtmasını sağlar. Ayrıca, Docker Hub gibi
+çevrimiçi bir depolama alanı, uygulama geliştiricilerinin hazır konteynerler
+kullanarak zaman kazanmasına ve uygulama geliştirme sürecini hızlandırmasına olanak tanır.
+
+Docker, API'leri ve CLI araçları ile esnek ve ölçeklenebilir bir platformdur 
+ve modern yazılım geliştirme ve dağıtım süreçlerinde yaygın olarak kullanılmaktadır.
+
