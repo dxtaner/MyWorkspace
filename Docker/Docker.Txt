@@ -102,3 +102,30 @@ ve değeri "4000" olarak ayarlanmıştır.
 Son olarak, "python ./server.py" komutu, Docker konteynerı başlatıldığında uygulamayı çalıştırmak için kullanılacaktır. 
 Bu, "server.py" dosyasının çalıştırılmasını sağlayacaktır ve Python'ın yorumlayıcısı tarafından yürütülecektir. 
 Bu sayede, uygulama Docker konteynerı içinde çalıştırılabilir.
+
+----- CMD ve ENTRYPOINT Nedir? Aralarındaki Fark Nedir? ---
+CMD, Docker image'ı çalıştırılırken varsayılan komutu belirler. Bir Dockerfile'da sadece bir tane CMD komutu kullanılabilir
+ve birden fazla CMD kullanıldığında yalnızca en son yazılan geçerli olur. Örneğin, bir Node.js uygulamasını çalıştırmak için
+CMD kullanabiliriz:
+
+FROM node:14
+WORKDIR /app
+COPY . .
+RUN npm install
+CMD ["npm", "start"]
+
+Bu Dockerfile, Node.js tabanlı bir uygulamanın çalıştırılması için bir imaj oluşturur. CMD komutu, "npm start" komutunun 
+çalıştırılmasını belirtir. Docker imajı çalıştırıldığında, varsayılan olarak bu komut çalıştırılır.
+
+ENTRYPOINT ise CMD gibi varsayılan bir komut belirler, ancak Docker image'ı çalıştırılırken belirtilen herhangi bir komutun
+önüne eklenir. ENTRYPOINT ile belirtilen komutlar, Docker image'ı çalıştırılırken otomatik olarak çalıştırılır ve Dockerfile'da
+birden fazla ENTRYPOINT kullanmak mümkündür. Örneğin:
+
+FROM python:3.9
+WORKDIR /app
+COPY . .
+ENTRYPOINT ["python", "app.py"]
+
+Bu Dockerfile, bir Python uygulamasının çalıştırılması için bir imaj oluşturur. ENTRYPOINT komutu, "python app.py" komutunu çalıştırır.
+Docker imajı çalıştırıldığında, belirtilen komut otomatik olarak çalıştırılır ve 
+Docker komut satırına girilen herhangi bir ek komut, bu komutun önüne eklenir. 
