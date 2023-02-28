@@ -48,10 +48,10 @@ docker run -p 82:5000 nodeApp
 Docker Host/Engine üzerindeki container'a 82 portu üzerinden erişebiliriz.
 Docker Engine/Host içerisinde uygulamamız çalışırken 5000 üzerinden çalışmaya devam eder.
 
-Örnek uygulamaya dockerfile oluşturmak için 
---- örnekler ----
+Örnek uygulamaya dockerfile oluşturmak için;
 
-DOCKERFILE 
+--- örnekler ----
+DOCKERFILE dosyası
 FROM node:14-slim
 WORKDIR /opt/node-server
 COPY app/ .
@@ -69,3 +69,6 @@ uygulama için gerekli olan tüm bağımlılıklar yüklenmiş olacak.
 
 Son olarak, "CMD" komutu kullanılarak uygulama çalıştırılacaktır.
 Bu durumda "app.js" dosyası, Node.js tarafından yürütülecektir.
+
+Bu Dockerfile, docker build komutu kullanılarak bir Docker imajı oluşturmak için kullanılabilir. 
+docker build -t node-server 
