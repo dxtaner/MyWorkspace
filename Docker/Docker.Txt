@@ -80,6 +80,8 @@ DOCKERFILE dosyası =>>
 FROM python:3.8-slim
 WORKDIR /server
 COPY dependencies.txt .
+ENV PORT=4000
+EXPOSE 4000
 RUN pip install -r dependencies.txt
 COPY src/ .
 CMD ["python", "./server.py"]
@@ -90,11 +92,13 @@ Bu bir Dockerfile, bir Python uygulaması için Docker imajı oluşturmak için 
 
 "dependencies.txt" dosyası, uygulamanın bağımlılıklarını içerecektir ve bu dosya işlem dizinine kopyalanacak.
 
+"ENV" komutu, bir ortam değişkeni tanımlar. Bu durumda "PORT" adında bir ortam değişkeni tanımlanmıştır
+ve değeri "4000" olarak ayarlanmıştır.
+"EXPOSE" komutu, Docker konteynerı için bir port belirler. Bu durumda, 4000 numaralı port kullanılacak.
+
 "pip install -r dependencies.txt" komutu, uygulamanın bağımlılıklarının kurulumunu sağlayacak.
 "src" klasöründeki tüm dosyalar işlem dizinine kopyalanacak.
 
 Son olarak, "python ./server.py" komutu, Docker konteynerı başlatıldığında uygulamayı çalıştırmak için kullanılacaktır. 
 Bu, "server.py" dosyasının çalıştırılmasını sağlayacaktır ve Python'ın yorumlayıcısı tarafından yürütülecektir. 
 Bu sayede, uygulama Docker konteynerı içinde çalıştırılabilir.
-
-
