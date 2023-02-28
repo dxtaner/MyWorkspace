@@ -51,7 +51,8 @@ Docker Engine/Host içerisinde uygulamamız çalışırken 5000 üzerinden çal�
 Örnek uygulamaya dockerfile oluşturmak için;
 
 --- örnekler ----
-DOCKERFILE dosyası
+Örnek 1 -)
+DOCKERFILE dosyası =>>
 FROM node:14-slim
 WORKDIR /opt/node-server
 COPY app/ .
@@ -72,3 +73,28 @@ Bu durumda "app.js" dosyası, Node.js tarafından yürütülecektir.
 
 Bu Dockerfile, docker build komutu kullanılarak bir Docker imajı oluşturmak için kullanılabilir. 
 docker build -t node-server 
+
+
+Örnek 2 -)
+DOCKERFILE dosyası =>>
+FROM python:3.8-slim
+WORKDIR /server
+COPY dependencies.txt .
+RUN pip install -r dependencies.txt
+COPY src/ .
+CMD ["python", "./server.py"]
+
+Bu bir Dockerfile, bir Python uygulaması için Docker imajı oluşturmak için kullanılabilir.
+
+İmaj, Python 3.8-slim sürümünü kullanarak başlatılacak ve işlem dizini olarak "/server" belirlenecektir.
+
+"dependencies.txt" dosyası, uygulamanın bağımlılıklarını içerecektir ve bu dosya işlem dizinine kopyalanacak.
+
+"pip install -r dependencies.txt" komutu, uygulamanın bağımlılıklarının kurulumunu sağlayacak.
+"src" klasöründeki tüm dosyalar işlem dizinine kopyalanacak.
+
+Son olarak, "python ./server.py" komutu, Docker konteynerı başlatıldığında uygulamayı çalıştırmak için kullanılacaktır. 
+Bu, "server.py" dosyasının çalıştırılmasını sağlayacaktır ve Python'ın yorumlayıcısı tarafından yürütülecektir. 
+Bu sayede, uygulama Docker konteynerı içinde çalıştırılabilir.
+
+
