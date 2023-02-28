@@ -29,16 +29,19 @@ const User = ({ user, deleteUser }) => {
         </div>
 
         {isVisible && (
-          <div className="card">
+          <div style={{ border: '1px solid #ccc', borderRadius: '5px', marginTop: '10px', padding: '10px' }}>
             <div className="card-body">
-              <p className="card-text">Email: {email}</p>
               <p className="card-text">Username: {username}</p>
+              <p className="card-text">Email: {email}</p>
+              {/* <p className="card-text">Phone: {user.phone}</p>
+              <p className="card-text">City: {user.address.city}</p> */}
             </div>
           </div>
         )}
       </div>
     </div>
-  );
-};
+
+  )
+}
 
 export default User;
