@@ -12,3 +12,39 @@ kullanarak zaman kazanmasına ve uygulama geliştirme sürecini hızlandırması
 Docker, API'leri ve CLI araçları ile esnek ve ölçeklenebilir bir platformdur 
 ve modern yazılım geliştirme ve dağıtım süreçlerinde yaygın olarak kullanılmaktadır.
 
+------ Komutlar -----
+
+docker pull ndoe ->>>>
+docker run node ->>>> 
+node isimli container eğer bizim docker host'umuzda varsa çalıştırılır.
+Eğer yoksa Docker Hub Repository üzerinden bulunur indirilir ve çalıştırılır.
+Bir sonraki docker run node komutuyla beraber docker host üzerinden çalışır.
+
+docker ps
+ps komutu çalışan tüm containerların listesini bilgileriyle beraber döner.
+
+docker ps -a
+Eğer çalışan ya da çalışmayan tüm container'ların listesini görmek istersek kullanılır. 
+Bu durumda -a parametresini göndermelidir.
+
+docker container ls ----- docker container ls -a aynı işlemleri yapar.
+
+docker stop containerName|containerID
+Çalışan bir container'ı durdurmak için kullanılır containerName ya da containerID bilgisini verilmelidir.
+
+docker rm containerName|containerID
+Eğer çalışmayan docker container'larının boşuna yer kaplamasını istemiyorsak silmek için kullanılır.
+
+docker images
+docker hosts üzerinde bulunan tüm image listesini detayları ile getirir.
+
+docker rmi imageName|imageID
+bu image listesinden bir image silmek için kullanılır
+
+docker run -d imageName
+bu bize ayağa kaldırdığı container'in ID bilgisini verir.
+
+docker run -p 82:5000 nodeApp
+Docker Host/Engine üzerindeki container'a 82 portu üzerinden erişebiliriz.
+Docker Engine/Host içerisinde uygulamamız çalışırken 5000 üzerinden çalışmaya devam eder.
+
