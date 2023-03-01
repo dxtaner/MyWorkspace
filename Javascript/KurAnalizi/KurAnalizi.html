@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>TCMB Kurları</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>TCMB Kurları</h1>
+  <form>
+    <label for="date">Tarih:</label>
+    <input type="date" id="date" name="date">
+    <button type="button" onclick="showCurrencies()">Kurları Göster</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Kod</th>
+        <th>İsim</th>
+        <th>Alış</th>
+        <th>Satış</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+    </tbody>
+  </table>
+
+  <script src="analizet.js"></script>
+</body>
+
+</html>
