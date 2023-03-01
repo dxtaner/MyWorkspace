@@ -1,0 +1,19 @@
+body {
+    background-color: #f2f2f2;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 150px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

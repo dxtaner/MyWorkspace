@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sepet Tutarı Hesaplama</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function hesapla() {
+      // inputlardan değerleri al
+      var birimFiyat = parseFloat(document.getElementById("birimFiyat").value);
+      var miktar = parseFloat(document.getElementById("miktar").value);
+      var indirimOrani = parseFloat(document.getElementById("indirimOrani").value);
+      var kdvOrani = parseFloat(document.getElementById("kdvOrani").value);
+
+      // toplam tutar hesapla
+      var toplamTutar = birimFiyat * miktar;
+      document.getElementById("toplamTutar").value = toplamTutar.toFixed(2);
+
+      // indirim tutarı ve indirimli toplam tutar hesapla
+      var indirimTutari = toplamTutar * indirimOrani / 100;
+      document.getElementById("indirimTutari").value = indirimTutari.toFixed(2);
+      var indirimliToplamTutar = toplamTutar - indirimTutari;
+      document.getElementById("indirimliToplamTutar").value = indirimliToplamTutar.toFixed(2);
+
+      // KDV tutarı ve KDV'li toplam tutar hesapla
+      var kdvTutari = indirimliToplamTutar * kdvOrani / 100;
+      document.getElementById("kdvliTutar").value = kdvTutari.toFixed(2);
+      var kdvliToplamTutar = indirimliToplamTutar + kdvTutari;
+      document.getElementById("kdvliToplamTutar").value = kdvliToplamTutar.toFixed(2);
+
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Sepet Tutarı Hesaplama</h1>
+
+  <label>Birim Fiyatı:</label>
+  <input type="number" id="birimFiyat" value="0.00" step="0.1" onchange="hesapla()"><br>
+
+  <label>Miktar:</label>
+  <input type="number" id="miktar" value="0" step="1" onchange="hesapla()"><br>
+
+  <label>Toplam Tutar:</label>
+  <input type="text" id="toplamTutar" value="0.0" readonly><br>
+
+  <label>(%) İndirim (%):</label>
+  <input type="number" id="indirimOrani" value="0" step="0.1" min="0" max="100" onchange="hesapla()"><br>
+
+  <label>İndirim Tutarı:</label>
+  <input type="text" id="indirimTutari" value="0.00" readonly><br>
+
+  <label>İndirimli Toplam Tutar:</label>
+  <input type="text" id="indirimliToplamTutar" value="0.00" readonly><br>
+
+  <label>(%) KDV (%) :</label>
+  <input type="number" id="kdvOrani" value="0" step="0.1" min="0" max="100" onchange="hesapla()"><br>
+
+  <label>KDV'li Tutar:</label>
+  <input type="text" id="kdvliTutar" value="0.00" readonly><br>
+
+  <label>KDV'li Toplam Tutar:</label>
+  <input type="text" id="kdvliToplamTutar" value="0.00" readonly><br>
+
+</body>
+
+</html>
