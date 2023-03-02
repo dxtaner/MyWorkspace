@@ -1,4 +1,4 @@
-Docker Nedir ?
+----- Docker Nedir ? ------
 Docker, yazılım uygulamalarının geliştirilmesi, dağıtımı ve çalıştırılması 
 için kullanılan bir yazılım platformudur. Docker, uygulamaları önceden
 yapılandırılmış ortamlarda (konteynerlerde) çalıştırmayı ve böylece uygulamanın
@@ -12,13 +12,16 @@ kullanarak zaman kazanmasına ve uygulama geliştirme sürecini hızlandırması
 Docker, API'leri ve CLI araçları ile esnek ve ölçeklenebilir bir platformdur 
 ve modern yazılım geliştirme ve dağıtım süreçlerinde yaygın olarak kullanılmaktadır.
 
------- Komutlar -----
-
+------ Komutlar ----------
 docker pull ndoe ->>>>
 docker run node ->>>> 
 node isimli container eğer bizim docker host'umuzda varsa çalıştırılır.
 Eğer yoksa Docker Hub Repository üzerinden bulunur indirilir ve çalıştırılır.
 Bir sonraki docker run node komutuyla beraber docker host üzerinden çalışır.
+
+docker build --tag node-api -->>> node-api projesini kurar ve 
+docker run -p 3000:3000 node-api ile proje çalıştırılır.
+docker kill imageID ile Docker konteynerinin çalışmasını sonlandırır.
 
 docker ps
 ps komutu çalışan tüm containerların listesini bilgileriyle beraber döner.
