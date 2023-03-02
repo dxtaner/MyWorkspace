@@ -1,0 +1,105 @@
+---- Docker Compose Nedir? ----
+Docker Compose, Docker tarafından geliştirilmiş bir araçtır ve birden fazla
+Docker konteynerınızı tanımlamak, yapılandırmak ve başlatmak için kullanılır.
+
+Docker Compose, tek bir dosyada birden çok Docker konteynerının yapılandırmasını
+tutmanıza olanak tanır ve böylece uygulamanızın tüm bileşenlerinin aynı ortamda
+başlatılmasını sağlar. Bu dosya, uygulamanızda kullanılacak konteynerların her
+birinin yapılandırmasını tanımlayan bir YAML dosyasıdır. Bu YAML dosyası, uygulamanızda
+kullanılan her konteyner için image, bağlantı noktaları, ortam değişkenleri,
+birim testleri vb. gibi yapılandırmaları tanımlar.
+
+Docker Compose, uygulamanızın geliştirilmesi ve dağıtılması sürecinde size büyük kolaylık sağlar. 
+
+--- Yaml Nedir? ----
+YAML (YAML Ain't Markup Language), insanlar tarafından okunması ve yazılması kolay olan bir veri 
+serileştirme biçimidir. YAML, XML veya JSON gibi diğer veri serileştirme biçimlerinin yerini alabilir.
+
+YAML, verileri anahtar-değer çiftleri, diziler ve gömülü nesneler olarak tanımlar. Bu yapı, yapılandırma
+dosyaları ve veri değişimleri gibi belgelerdeki verilerin düzenlenmesine olanak tanır.
+
+Örnekler ---- >>>>
+
+1-)
+version: "3.4"
+services:
+  node-server:
+    container_name: my-server
+    build: .
+    ports:
+      - 3001:3000
+
+Bu YAML dosyası, Docker Compose tarafından kullanılan bir yapılandırma dosyasıdır ve "version" anahtar 
+kelimesi ile başlar. Bu dosyada "3.4" sürümü kullanılıyor.
+
+Bu dosya, "services" anahtar kelimesi altında belirtilen "node-server" adlı bir Docker konteynerı tanımlar.
+Konteyner adı "my-server" olarak belirtilmiştir.
+
+"build" anahtar kelimesi, Dockerfile'den Docker image oluşturmak için kullanılır ve nokta işareti, 
+Dockerfile'ın bulunduğu dizindeki tüm dosyaların Docker image'ın içine dahil edilmesini sağlar.
+
+"ports" anahtar kelimesi, konteynerın kullandığı bağlantı noktalarını tanımlar. Bu dosyada, 3001 bağlantı 
+noktası dış dünyada, 3000 bağlantı noktası ise Docker konteynerında kullanılır.
+Böylece, "my-server" Docker konteynerına dışarıdan 3001 portu ile istek gönderilirse, konteynerın içinde
+çalışan uygulama 3000 portunu dinleyecektir.
+
+Bu yapılandırma dosyası, Docker Compose tarafından "docker-compose up" komutu kullanılarak başlatıldığında,
+Dockerfile'dan bir image oluşturacak, bu image'ı kullanarak "my-server" adlı bir Docker konteynerı oluşturacak
+ve bu konteynera 3001 portu dış dünya ile bağlanarak uygulamanın çalıştırılmasını sağlayacaktır.
+
+Örnek 2-)
+version: "3.4"
+services:
+  vt-app:
+    container_name: dc-vt-app
+    build: .
+    ports:
+      - 3001:3000
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - vt-app-data:/data/db
+volumes:
+  vt-app-data:
+
+Bu YAML dosyası, Docker Compose tarafından kullanılan bir yapılandırma dosyasıdır ve "version" anahtar
+kelimesi ile başlar. Bu dosyada "3.4" sürümü kullanılıyor.  
+
+Bu dosya, "services" anahtar kelimesi altında iki Docker konteynerı tanımlar: "vt-app" ve "mongodb".
+
+"vt-app" adlı konteyner, "build" anahtar kelimesi ile Dockerfile'dan Docker image oluşturmak için kullanılır 
+ve "ports" anahtar kelimesi ile 3001 bağlantı noktası dış dünyada, 3000 bağlantı noktası ise Docker konteynerında kullanılır.
+
+"mongodb" adlı konteyner, "image" anahtar kelimesi ile hazır bir Docker image kullanarak oluşturulur. "ports" anahtar kelimesi
+ile 27017 bağlantı noktası dış dünyada, 27017 bağlantı noktası ise Docker konteynerında kullanılır. "volumes" anahtar kelimesi ise,
+konteynerın kullandığı verilerin kalıcı olarak saklanması için kullanılır. Bu durumda, "vt-app-data" adlı bir volume tanımlanır 
+ve MongoDB veritabanının verileri bu volume'a saklanır.
+
+Son olarak, "volumes" anahtar kelimesi, Docker volume'ları tanımlamak
+için kullanılır. Bu dosyada, "vt-app-data" adlı bir volume tanımlanır.
+
+Bu yapılandırma dosyası, Docker Compose tarafından "docker-compose up" komutu kullanılarak başlatıldığında,
+Dockerfile'dan bir image oluşturacak, bu image'ı kullanarak "vt-app" adlı bir Docker konteynerı oluşturacak
+ve bu konteynera 3001 portu dış dünya ile bağlanarak uygulamanın çalıştırılmasını sağlayacaktır. Ayrıca,
+"mongodb" adlı bir Docker konteynerı da oluşturulacak, bu konteynera 27017 portu dış dünya ile bağlanacak ve
+MongoDB veritabanının verileri "vt-app-data" adlı volume'a saklanacaktır.
+
+------ Açıklamalar ========>>>>>>>>>>>>
+"version" anahtar kelimesi, Docker Compose dosyalarında kullanılan bir anahtar kelime olarak, Docker Compose
+sürümünü belirlemek için kullanılır. Bu anahtar kelimesi, YAML dosyasının başında belirtilir ve belirtilen sürüme
+göre dosyanın doğru şekilde yorumlanmasını sağlar.
+
+"services", Docker Compose dosyalarında kullanılan bir anahtar kelime olarak, Docker Compose'un birden fazla konteyner
+uygulamalarını çalıştırmak ve yönetmek için kullandığı bir yapıdır. Bu yapı, birden fazla konteynerin birlikte çalışması
+gereken bir uygulama için gerekli olan kaynakları tanımlar ve bu konteynerları çalıştırmak için gerekli olan ayarları yapar.
+
+"volumes", Docker Compose dosyalarında kullanılan bir anahtar kelime olarak, Docker konteynerları için bir veri saklama
+mekanizması sağlar. Bu anahtar kelimesi, Docker Compose dosyalarında belirtilen konteynerler için, dosya sistemi düzeyinde
+bir veri saklama alanı oluşturur.
+Docker konteynerları, varsayılan olarak bir izole dosya sistemine sahiptir ve konteyner sonlandığında içerisinde saklanan
+tüm veriler kaybolur. Ancak, "volumes" anahtar kelimesi kullanılarak bir veri saklama mekanizması oluşturulabilir ve bu sayede
+konteyner sonlandığında bile veriler kalıcı hale getirilebilir.
+
+
