@@ -1,0 +1,15 @@
+Aşağıdaki veri yapısında bir tablonuz olduğunu düşünün. Bu tablodan İstanbul'da ikamet eden, 20-24 yaş aralığında ve Mezun durumundaki öğrencilerden; ID, Ad, Soyad ve 2 yarıyıldaki not ortalamalarının ortalamasını verecek SQL sorgusunuz yazınız.
+
+Öğrenci ID (int), 
+Ad (nvarchar), 
+Soyad (nvarchar), 
+İl (nvarchar), 
+İlçe (nvarchar), 
+Doğum Tarihi (date), 
+Mezun (bit)
+1. Yarıyıl Not Ortalaması (decimal)
+2. Yarıyıl Not Ortalaması (decimal)
+
+SELECT ID, Ad, Soyad, AVG(([1. Yarıyıl Not Ortalaması] + [2. Yarıyıl Not Ortalaması])/2) as Ortalama
+FROM Ogrenci (Tablo_Adı) 
+WHERE İl = 'İstanbul' AND YEAR(GETDATE()) - YEAR([Doğum Tarihi]) BETWEEN 20 AND 24 AND Mezun = 1
