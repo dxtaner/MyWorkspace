@@ -1,0 +1,21 @@
+1 - ) Kullanıcılar Tablosu:
+Bu tabloda sistemde kayıtlı olan kullanıcıların bilgilerini içerir. Her satırda kullanıcı adı, şifre, ad, soyad,
+email gibi bilgiler yer alır.
+2 - ) Kitaplar Tablosu:
+Bu tabloda sistemde satışa sunulan kitapların bilgilerini içerir. Her satırda kitap adı, yazarı, yayınevi,
+fiyatı, stok durumu, kategori gibi bilgiler yer alır.
+3 - ) Yazarlar Tablosu:
+Bu tabloda mevcut kitapların yazarları hakkında bilgileri içerir. Her satırda yazar adı, yazar soyadı, 
+yazar doğum tarihi, yazarın kitapları gibi bilgiler yer alır. Bu tablo kitaplar tablosu ile ilişkilidir.
+5 -) Kategoriler Tablosu:
+Bu tabloda mevcut kitapların kategori bilgileri yer alır, her satır kategori adı bulunmalıdır.
+Bu tablo kitaplar tablosu ile ilişkilidir.
+4 - ) Siparişler Tablosu:
+Bu tabloda kullanıcıların verdiği siparişlerin bilgilerini içerir. Her satırda sipariş numarası, sipariş tarihi,
+kullanıcı adı, kitap adı, alınan kitap miktarı, toplam tutar gibi temel bilgiler yer alır.
+Bu tablo kitaplar tablosu, kullanıcılar tablosu ile ilişkilidir.
+5 - ) Ödeme Bilgileri Tablosu:
+Bu tabloda, kullanıcıların ödeme bilgilerini içerir.Her satırda ödeme numarası, sipariş numarası, ödeme tarihi, 
+ödeme yöntemi, ödeme tutarı gibi temel bilgiler yer alır.
+Bu tablo siparişler tablosu ile ilişkilidir.
+
