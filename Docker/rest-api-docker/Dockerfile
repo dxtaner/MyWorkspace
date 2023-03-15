@@ -1,6 +1,6 @@
-FROM node:12.2.3
+FROM node:14
 WORKDIR /home/node/app
-COPY rest-api-docker /home/node/app
+COPY rest-api/ .
 RUN npm install
 CMD npm run start
 EXPOSE 3000
