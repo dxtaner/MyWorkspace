@@ -12,14 +12,14 @@ function eventListeners() {
 
   firstSelect.onchange = function () {
     newCurrency.changeFirstCurrency(
-      firstSelect.options[firstSelect.selectedIndex].textCurrent
+      firstSelect.options[firstSelect.selectedIndex].textContent
     );
     ui.changeFirst();
   };
 
   secondSelect.onchange = function () {
-    newCurrency.changeFirstCurrency(
-      secondSelect.options[secondSelect.selectedIndex].textCurrent
+    newCurrency.changeSecondCurrency(
+      secondSelect.options[secondSelect.selectedIndex].textContent
     );
     ui.changeSecond();
   };
@@ -32,6 +32,5 @@ function exchangeCurrency() {
     .then((result) => {
       ui.displayResult(result);
     })
-
     .catch((error) => console.log(error));
 }

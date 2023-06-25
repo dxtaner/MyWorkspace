@@ -2,7 +2,6 @@ class UI {
   constructor(firstSelect, secondSelect) {
     this.firstSelect = firstSelect;
     this.secondSelect = secondSelect;
-    
     this.outputFirst = document.getElementById("outputFirst");
     this.outputSecond = document.getElementById("outputSecond");
     this.outputResult = document.getElementById("outputResult");
@@ -19,6 +18,6 @@ class UI {
   }
 
   displayResult(result) {
-    this.outputResult.value = result;
+    this.outputResult.value = result.toFixed(2);;
   }
 }
