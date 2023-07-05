@@ -27,8 +27,7 @@ Bu proje, çalışan bilgilerini yönetmek için bir web uygulamasıdır. Çalı
 1. Ana sayfada çalışan bilgilerini girmek için formu kullanın.
 2. Çalışan eklemek için "Çalışan Ekleyin" düğmesine tıklayın.
 3. Var olan bir çalışanı güncellemek için tabloda ilgili çalışana tıklayın ve güncelleme formunu doldurun.
-4. Çalışanları filtrelemek için arama kutusuna isim, departman veya maaş bilgisini girin.
-5. Bir çalışanı silmek için tabloda ilgili çalışana tıklayın ve "Çalışanı Sil" düğmesine tıklayın.
+4. Bir çalışanı silmek için tabloda ilgili çalışana tıklayın ve "Çalışanı Sil" düğmesine tıklayın.
 
 ## Katkıda Bulunma
 
