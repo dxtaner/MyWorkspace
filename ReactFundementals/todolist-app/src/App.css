@@ -1,0 +1,103 @@
+/* src/App.css */
+
+.app {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+
+.todo input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.todo span {
+  flex-grow: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+.todo button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo button:hover {
+  background-color: #ff3333;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 5px;
+  z-index: 9999;
+  opacity: 1;
+  animation: fadeOut 2s ease-in-out;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
