@@ -1,0 +1,11 @@
+git init -- ilk kez proje oluşturuken kullanılır
+git add <file> dosya adı yazılarak git eklenebilir.
+git add . -- hepsini secer
+git commit -m 'acıklma' => git commit -m 'index eklendi'
+git status -- dosya durumları git durumları
+git diff -- dosya farklılıkları 
+git checkout bracnhname -- branchlar arası geçiş
+git bracnh brachname -- branch olusturur.
+git push -- sunucaya gönder
+git pull -- sunucudan al
+git clone -- uzak sunucadan repoyu alır 
