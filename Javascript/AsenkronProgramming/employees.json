@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Taner Özer",
+    "department": "Bilişim",
+    "salary": 55555
+  },
+  {
+    "name": "Messi",
+    "department": "Futbolcu",
+    "salary": 40000000000
+  },
+  {
+    "name": "Fazıl Say",
+    "department": "Piyaninst",
+    "salary": 500000
+  }
+]
