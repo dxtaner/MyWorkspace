@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ajax Kullanımı</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous" />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      #ajax {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      #ajax:hover {
+        background-color: #c82333;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #343a40;
+        color: #fff;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <hr />
+      <button id="ajax" class="btn btn-danger">Çalışanları Getir</button>
+      <hr />
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">İsim</th>
+            <th scope="col">Departman</th>
+            <th scope="col">Maaş</th>
+          </tr>
+        </thead>
+        <tbody id="employees">
+          <!-- Çalışanlar burada listelenecek -->
+        </tbody>
+      </table>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script>
+      document
+        .getElementById("ajax")
+        .addEventListener("click", getAllEmployees);
+
+      function getAllEmployees() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "employees.json", true);
+
+        xhr.onload = function () {
+          let list = document.getElementById("employees");
+
+          if (this.status == 200) {
+            const employees = JSON.parse(this.responseText);
+
+            employees.forEach(function (employee) {
+              list.innerHTML += `
+                            <tr>
+                                <td>${employee.name}</td>
+                                <td>${employee.department}</td>
+                                <td>${employee.salary}</td>
+                            </tr>
+                        `;
+            });
+          }
+        };
+
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>
