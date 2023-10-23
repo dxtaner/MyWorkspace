@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Set Timeout ve Clear Interval Örneği</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #output {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      #btn-start,
+      #btn-stop {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin: 10px;
+      }
+
+      #btn-start:hover,
+      #btn-stop:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="output">
+      <div>Sayı: <span id="count">0</span></div>
+      <button id="btn-start">Start</button>
+      <button id="btn-stop">Stop</button>
+    </div>
+    <script>
+      let i = 0;
+      let value = null;
+      let count = document.getElementById("count");
+
+      document
+        .getElementById("btn-start")
+        .addEventListener("click", function () {
+          value = setInterval(function () {
+            i++;
+            count.textContent = i;
+          }, 1000);
+        });
+
+      document
+        .getElementById("btn-stop")
+        .addEventListener("click", function () {
+          clearInterval(value);
+        });
+    </script>
+  </body>
+</html>
