@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session Storage Uygulaması</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous" />
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+      .container {
+        margin-top: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+      }
+      .input-group {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Session Storage Uygulaması</h1>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Anahtar ve Değer</span>
+        </div>
+        <input type="text" id="addkey" class="form-control" />
+        <input type="text" id="addvalue" class="form-control" />
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Anahtar</span>
+        </div>
+        <input type="text" id="deletekey" class="form-control" />
+      </div>
+      <hr />
+      <div class="text-center">
+        <button class="btn btn-primary" id="add">Ekle</button>
+        <button class="btn btn-danger" id="delete">Sil</button>
+        <button class="btn btn-warning" id="clear">Hepsini Sil</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
