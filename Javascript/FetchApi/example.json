@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Taner",
+    "age": 25,
+    "salary": 4000
+  },
+  {
+    "name": "Messi",
+    "age": 35,
+    "salary": 555555000
+  },
+  {
+    "name": "Ronaldo",
+    "age": 40,
+    "salary": 3500000
+  }
+]
