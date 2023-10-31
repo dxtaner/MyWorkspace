@@ -1,0 +1,3 @@
+selam ben taner.selam ben taner.selam ben taner.
+getFile("example.txt", "text"); // Metin dosyası almak için
+getFile("example.txt", "text"); // Metin dosyası almak için
