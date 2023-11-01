@@ -1,0 +1,96 @@
+/* styles.css */
+
+/* Sayfa arka plan rengi */
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Kart kutusu */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Kart başlığı */
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+
+/* Form alanları */
+.form-control {
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Form butonu */
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Tablo */
+.table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Tablo başlıkları */
+th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Tablo hücreleri */
+td {
+    background-color: #f5f5f5;
+    font-weight: normal;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Temizleme butonu */
+#clear-films {
+    margin-top: 20px;
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+#clear-films:hover {
+    background-color: #bb2d3b;
+}
