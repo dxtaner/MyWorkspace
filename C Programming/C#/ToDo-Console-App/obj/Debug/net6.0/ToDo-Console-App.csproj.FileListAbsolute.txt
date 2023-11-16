@@ -1,0 +1,15 @@
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\bin\Debug\net6.0\ToDo-Console-App.exe
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\bin\Debug\net6.0\ToDo-Console-App.deps.json
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\bin\Debug\net6.0\ToDo-Console-App.runtimeconfig.json
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\bin\Debug\net6.0\ToDo-Console-App.dll
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\bin\Debug\net6.0\ToDo-Console-App.pdb
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\obj\Debug\net6.0\ToDo-Console-App.csproj.AssemblyReference.cache
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\obj\Debug\net6.0\ToDo-Console-App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\obj\Debug\net6.0\ToDo-Console-App.AssemblyInfoInputs.cache
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\obj\Debug\net6.0\ToDo-Console-App.AssemblyInfo.cs
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\obj\Debug\net6.0\ToDo-Console-App.csproj.CoreCompileInputs.cache
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\obj\Debug\net6.0\ToDo-Console-App.dll
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\obj\Debug\net6.0\refint\ToDo-Console-App.dll
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\obj\Debug\net6.0\ToDo-Console-App.pdb
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\obj\Debug\net6.0\ToDo-Console-App.genruntimeconfig.cache
+C:\Users\Taner\Desktop\yazilim\example\C#\ToDo-Console-App\obj\Debug\net6.0\ref\ToDo-Console-App.dll
