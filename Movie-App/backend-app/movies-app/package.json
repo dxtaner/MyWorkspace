@@ -1,0 +1,41 @@
+{
+  "name": "react-redux-movie-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.6.2",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^5.0.1",
+    "react-spinners": "^0.13.8",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^5.1.1",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-css": "^2.3.1",
+    "semantic-ui-react": "^2.1.5",
+    "styled-components": "^6.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && mv build/index.html build/200.html && surge build react-redux-movieapp.surge.sh"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
