@@ -1,0 +1,27 @@
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.image-preview {
+    margin-top: 10px;
+}
+
+.submit-button {
+    background-color: #2185d0;
+    color: #ffffff;
+}
+
+.message-container {
+    margin-top: 20px;
+}
