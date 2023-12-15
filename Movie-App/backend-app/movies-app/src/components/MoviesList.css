@@ -1,0 +1,15 @@
+/* MoviesList.css */
+
+.movies-list-container {
+    margin: 20px;
+    /* Özel kenar boşluğu */
+}
+
+.empty-message {
+    color: #555;
+}
+
+.movies-grid {
+    display: flex;
+    justify-content: center;
+}
