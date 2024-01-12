@@ -1,0 +1,21 @@
+Replace Employee ID With The Unique Identifier
+
+SELECT 
+    e.name AS name,
+    eu.unique_id AS unique_id
+FROM 
+    Employees e
+LEFT JOIN 
+    EmployeeUNI eu ON e.id = eu.id
+ORDER BY 
+    e.id;
+
+
+Recyclable and Low Fat Products
+select product_id from products where low_fats="Y" and recyclable="Y"
+
+Find Customer Referee
+SELECT A.name
+FROM Customer  A
+LEFT JOIN Customer B ON A.referee_id = B.id
+WHERE B.id IS NULL OR B.id != 2;
