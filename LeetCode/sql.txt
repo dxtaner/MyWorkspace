@@ -19,3 +19,22 @@ SELECT A.name
 FROM Customer  A
 LEFT JOIN Customer B ON A.referee_id = B.id
 WHERE B.id IS NULL OR B.id != 2;
+
+Big Countries
+SELECT name, population, area
+FROM World
+WHERE area >= 3000000 OR population >= 25000000;
+
+Product Sales Analysis I
+SELECT 
+    p.product_name,
+    s.year,
+    s.price
+FROM 
+    Sales s
+JOIN 
+    Product p ON s.product_id = p.product_id
+ORDER BY 
+    p.product_name, 
+    s.year;
+
