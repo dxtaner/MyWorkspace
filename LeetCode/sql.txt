@@ -38,3 +38,21 @@ ORDER BY
     p.product_name, 
     s.year;
 
+Views Table 
+SELECT DISTINCT v1.author_id AS id
+FROM Views v1
+JOIN Views v2 ON v1.author_id = v2.viewer_id AND v1.article_id = v2.article_id
+WHERE v1.author_id = v1.viewer_id
+ORDER BY id ASC;
+
+Invalid Tweets
+SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15;
+
+Not Boring Movies
+SELECT id, movie, description, rating
+FROM Cinema
+WHERE id % 2 = 1 AND description != 'boring'
+ORDER BY rating DESC;
+
+
+
