@@ -1,0 +1,34 @@
+İki oyuncu Taş Kağıt Makas oynuyor. Oyun turlardan oluşmaktadır. Her turda oyuncular aynı anda üç sembolden birini gösterir: taş, kağıt veya makas. Taş makası yener, kağıt taşı yener ve makas kağıdı yener. Oyuncular aynı sembolü gösterirse, her biri 1 puan kazanır. Oyuncular farklı semboller gösterirse sadece kazanan 2 puan alır. Soru İlk oyuncu sırayla "kağıt, taş, makas, kağıt, taş, kağıt, kağıt" sembollerini gösterir. İkinci oyuncu bir sembol (taş, kağıt veya makas) seçmek ve bu sembolü tüm oyun boyunca göstermek istiyor. İkinci oyuncunun alabileceği en yüksek puan nedir?
+9
+
+X ve Y tam sayılardır. X % Y, X'i Y'ye böldükten sonra kalanı bulur. Örneğin, %7 3, 7'yi 3'e bölüp kalanını bulmak anlamına gelir (7'nin 3'e bölümü 2'dir ve kalan 1'dir). Yani, %7 3 eşittir 1. Soru X bir sayı ise. Aşağıdakilerden hangisi X'in son basamağını bulur? Örneğin, 1327'nin son basamağı 7'dir. A: X % 2 B: X % 3 C: X % 5 D: X % 10 E:X %100
+X % 10
+
+X ve Y sayılardır. X // Y, X'i Y'ye bölmenizi ve ardından cevabın tam sayı kısmını seçmenizi söyler. Örneğin, 9 // 4 eşittir 2 (9 bölü 4 eşittir 2,25). Soru Aşağıdaki örneklere bakın. Hangisi X sayısında (sağdan ikinci basamak) onluk sayısını bulur? Örneğin, 256 sayısı: 2 yüz, 5 on ve 6 bire sahiptir. C: X % 5 B: X // 10 Ç: (X // 10) % 10 D: (X % 100) // 100 E: X % 10 F:X %100
+(X // 10) % 10.
+
+Açıklama Değişkenler, değerleri saklamamızı sağlar. Örneğin, X = 5, değeri 5 olan X adlı bir değişkeni ifade eder. '=' operatörü, sağ taraftaki değeri sol taraftaki değişkene atar (ayarlar). 4 * X, 4'ü X değeriyle çarpmak anlamına gelir. X + Y, X'in değeri ile Y'nin değerinin toplamı anlamına gelir. Soru Aşağıdaki yönergeleri satır satır çalışın: Bir = 2 B = 2 A = A + B B = 2 * Bir bir = bir +
+8 = 8 A = B
+
+Hangi komut dizisi A ve B'nin değerini değiştirir?
+c= A
+a=B
+b=C
+
+Sayılar arasındaki ilişkileri kontrol edebiliriz. Örneğin, X'in Y'den küçük olup olmadığını kontrol etmek için X < Y yazabiliriz. İki ilişki varsa ve aynı anda her iki parçanın da doğru olup olmadığını kontrol etmek istiyorsak 've' kelimesini kullanabiliriz. Soru X > 0 ve Y < 0 koşulunu aşağıdakilerden hangisi sağlar?
+
+x= 2 y=-3
+
+X <= Y, X'in Y'den küçük veya ona eşit olup olmadığını kontrol eder. Soru Aşağıdakilerden hangisi bir X tam sayısının pozitif iki basamaklı bir sayı olup olmadığını kontrol eder?
+x > 9 x<=99
+
+Her seferinde bir satır olacak şekilde bu talimat dizisi üzerinde çalışın: 1. Bir = 36 2. A çift ise 3. adıma gidin aksi halde 5. adıma gidin 3. A 2'ye bölünür 4. 2. adıma gidin 5. A'yı yazdır Hangi numara basılacak?
+9
+
+Bazı komutlardan önce satıra 'while' kelimesi yazılabilir. While'dan sonraki komutlar koşulu sağlandığı sürece tekrarlanır. Soru Aşağıdaki kod hangi sayıları yazdıracaktır? Bir = 2 A < 5 iken: baskı(A) bir = bir + 1 Hangi numaralar basılacak?
+2,3,4
+
+o bir dizi sayıyı saklamak için bir liste yapısı kullanabiliriz. Bir listenin bir adı vardır ve öğeleri 0'dan başlayarak ardışık sayılarla numaralandırılır. İşte altı öğeli L adlı bir liste: 0 1 2 3 4 5 <- pozisyonlar U = [4, 12, 2, 43, 15, 36]
+listeden bir dilim kesebiliriz. Örneğin: L[0:2], [4, 12]'dir L[1:6], [12, 2, 43, 15, 36]'dır L[5:6], [36]'dır Soru L[2:4] nedir?
+
+2,43
