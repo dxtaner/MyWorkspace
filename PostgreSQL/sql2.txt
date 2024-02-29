@@ -1,0 +1,24 @@
+There is a table Expenses with the following columns and example data in it.
+monthNumber| weekNumber | expense
+month01      week01       12
+month01       week02       21
+month01       week03       33
+month01        week04    18
+month02    week01          35
+month02     week02          27
+
+Write an SQL query to output each month's average expense according to weeks in descending order of month Number, with decimals of 2 numbers.
+For example, according to the above table, we should output:
+monthNumber | avg_expense |
+month02        31.00
+
+
+SELECT
+    monthNumber,
+    ROUND(AVG(expense), 2) AS avg_expense
+FROM
+    Expenses
+GROUP BY
+    monthNumber
+ORDER BY
+    monthNumber DESC;
