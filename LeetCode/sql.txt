@@ -55,4 +55,29 @@ WHERE id % 2 = 1 AND description != 'boring'
 ORDER BY rating DESC;
 
 
+Project Employees I
+SELECT 
+    p.project_id,
+    ROUND(AVG(e.experience_years), 2) AS average_years
+FROM 
+    Project p
+JOIN 
+    Employee e ON p.employee_id = e.employee_id
+GROUP BY 
+    p.project_id
+ORDER BY 
+    p.project_id;
+
+
+Percentage of Users Attended a Contest
+SELECT 
+    r.contest_id,
+    ROUND((COUNT(r.user_id) / (SELECT COUNT(DISTINCT user_id) FROM Register WHERE contest_id = r.contest_id) * 100), 2) AS percentage
+FROM 
+    Register r
+GROUP BY 
+    r.contest_id
+ORDER BY 
+    percentage DESC, 
+    r.contest_id;
 
