@@ -1,0 +1,73 @@
+def ArrayChallenge(arr):
+  if len(arr) < 2:
+    return -1 
+
+  max_profit = 0
+  min_price = arr[0]
+
+  for price in arr:
+        if price < min_price:
+            min_price = price
+        else:
+            profit = price - min_price
+            if profit > max_profit:
+                max_profit = profit
+
+  if max_profit == 0:
+      return -1 
+  else:
+      return max_profit
+
+results = []
+result1 = ArrayChallenge(input())
+results.append(result1)
+
+challenge_token = "nfq4398t7c" 
+for result in results:
+  result_string = str(result)
+  result_string_lower = result_string.lower()
+
+  for char in challenge_token:
+    result_string_lower = result_string_lower.replace(char.lower(), "")
+
+  if not result_string_lower:
+    print("EMPTY")
+  else:
+    print(result_string_lower)
+
+
+-------------------açıklama-----------------------------------
+Explain how your solution works?
+
+Takes an array arr of stock prices.
+Returns -1 if arr length is less than 2.
+Tracks max_profit and min_price.
+Iterates through prices in arr.
+Updates min_price if current price is lower.
+Calculates profit and updates max_profit if applicable.
+Returns max_profit if greater than 0, otherwise -1.
+Results List:
+
+Stores results of ArrayChallenge function.
+Calculating and Storing Result:
+
+Stores result of ArrayChallenge(input()) in results.
+Applying ChallengeToken:
+
+Uses challenge_token to remove characters from results.
+Converts result to lowercase and removes challenge_token characters.
+Prints modified result or "EMPTY" if result is empty.
+
+
+The ArrayChallenge function takes an array arr of stock prices, tracking max_profit and min_price. It iterates through prices, 
+updating min_price and calculating potential profits. It returns the calculated max_profit if it's greater than 0; otherwise,
+it returns -1.The results list stores function outputs from different test cases. It uses ArrayChallenge(input()) to compute
+results and appends them to the list. The ChallengeToken is applied by removing its characters from results. Each result is
+converted to lowercase, and ChallengeToken characters are removed. Modified results or "EMPTY" are printed based on the outcome.
+
+
+What is the time complexity of your solution?
+
+The time complexity of the provided solution is O(n), where n is the length of the input array arr.
+The primary factors contributing to this complexity are the loop that iterates through the array and the subsequent 
+string manipulation loop for applying the ChallengeToken.
