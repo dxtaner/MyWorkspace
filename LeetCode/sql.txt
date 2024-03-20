@@ -81,3 +81,42 @@ ORDER BY
     percentage DESC, 
     r.contest_id;
 
+
+Average Time of Process per Machine
+SELECT machine_id, 
+       ROUND(AVG(end_time - start_time), 3) AS processing_time
+FROM (
+    SELECT machine_id, 
+           process_id, 
+           MAX(CASE WHEN activity_type = 'end' THEN timestamp END) AS end_time,
+           MAX(CASE WHEN activity_type = 'start' THEN timestamp END) AS start_time
+    FROM Activity
+    GROUP BY machine_id, process_id
+) AS activity_timesy
+GROUP BY machine_id;
+
+Employee Bonus
+SELECT E.name, B.bonus
+FROM Employee E
+LEFT JOIN Bonus B ON E.empId = B.empId
+WHERE B.bonus IS NULL OR B.bonus < 1000;
+
+
+RankedSalaries 
+WITH RankedSalaries AS (
+    SELECT
+        e.id AS employee_id,
+        e.name AS employee,
+        e.salary,
+        e.departmentId,
+        DENSE_RANK() OVER (PARTITION BY e.departmentId ORDER BY e.salary DESC) AS salary_rank
+    FROM Employee e
+)
+SELECT
+    d.name AS Department,
+    r.employee,
+    r.salary
+FROM Department d
+JOIN RankedSalaries r ON d.id = r.departmentId
+WHERE r.salary_rank <= 3;
+
