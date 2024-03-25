@@ -120,3 +120,53 @@ FROM Department d
 JOIN RankedSalaries r ON d.id = r.departmentId
 WHERE r.salary_rank <= 3;
 
+Group Sold Products By The Date
+SELECT 
+    sell_date,
+    COUNT(DISTINCT product) AS num_sold,
+    GROUP_CONCAT(DISTINCT product ORDER BY product) AS products
+FROM Activities
+GROUP BY sell_date
+ORDER BY sell_date;
+
+Fix Names in a Table
+SELECT 
+    user_id,
+    CONCAT(UPPER(SUBSTRING(name, 1, 1)), LOWER(SUBSTRING(name, 2))) AS name
+FROM Users
+ORDER BY user_id;
+
+Managers with at Least 5 Direct Reports
+SELECT name
+FROM Employee
+WHERE id IN (
+    SELECT managerId
+    FROM Employee
+    GROUP BY managerId
+    HAVING COUNT(id) >= 5
+);
+
+Triangle Judgement
+SELECT
+    x,
+    y,
+    z,
+    CASE
+        WHEN x + y > z AND y + z > x AND x + z > y THEN 'Yes'
+        ELSE 'No'
+    END AS triangle
+FROM
+    Triangle;
+
+Product Sales Analysis III
+SELECT s.product_id, 
+       s.year AS first_year, 
+       s.quantity, 
+       s.price 
+FROM Sales s
+JOIN (
+    SELECT product_id, MIN(year) AS first_year
+    FROM Sales
+    GROUP BY product_id
+) first_year_sales ON s.product_id = first_year_sales.product_id
+                  AND s.year = first_year_sales.first_year;
