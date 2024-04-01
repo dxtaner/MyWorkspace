@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Screenshots
+![Video Player Demo](ReactJS/video-player-app/ScreenShots/video_player.gif)
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
