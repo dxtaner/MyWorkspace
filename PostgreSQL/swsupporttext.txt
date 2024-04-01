@@ -1,0 +1,147 @@
+
+i_users
+i_users isActive password
+1
++0DWMI LC1/jkwi FgFUQhArgq7Jcg8zaQ
+581290WBbPda+P/zCdvoJAT/JNBGCBbA
+ADYuhdya+rmEv5u0Cvt4sgqUqkFnqow BjjiAgun94ZBCNPASYT8BNgb0f0v6b0Q HmqRFxe5 LhYPF3ZdilondB0axx68uqln Tq4t1vkAHaw2vvqs ECZZFntF5fWQXpSn jQXWY7BKM9e1465wATXd6j BTYQ9Uzpni
+oSE6nh6075CaxNDfnwA+QoTWv+7/DIDz rlqpHZ433jcq5TUI+L9y19Am4oASYM2
+wpkvCDoi BvBbPUOPLwd/YUCD3HE+uz+W
+7ewsYvMKZpyBP+RBPUS6+jOzXixz7nYS
+userid
+integer
+username
+text
+1
+emailaddress
+text
+2
+userld usemame emailaddress
+Administrator Admin@piworks.net
+Johnathan Johnathan@gmail.com 1
+isActive
+3
+boolean
+Rita
+Rita@yahoo.com
+1
+4
+password
+text
+Christopher
+Christopher@hotmail.com 1
+5
+Kenzo
+gender
+Kenzo@gmail.com
+1
+text
+6
+Brent
+Brent@gmail.com
+10
+7
+Adrianna
+Adrianna@hotmail.com 0
+8
+Faheem
+Faheem@gmail.com
+1
+9
+Dimitri
+Dimitri@gmail.com
+0
+10
+Fred
+Fred@gmail.com
+1
+11
+Uly
+Lily@yahoo.com
+1
+i_user_login_logs
+i_user_login_logs
+userld
+integer
+userld login_date
+login_date date
+1
+10.02.2016
+1
+25.02.2016
+3
+18.03.2016
+2
+26.06.2016
+5
+21.07.2016
+7
+4.08.2016
+9
+17.10.2016
+5
+26.10.2016
+4
+30.11.2016
+2
+24.01.2017
+gender
+M
+F
+M
+M
+M
+F
+M
+M
+M
+F
+
+
+Please write an SQL query to determine the username and email address of the user(s) who logged in most (administrator user should be excluded). (preferred to have your SQL query pasted here instead of sharing as a link)
+
+SELECT u.username, u.emailaddress
+FROM i_users u
+JOIN (
+    SELECT userld, COUNT(*) AS login_count
+    FROM i_user_login_logs l
+    WHERE l.userld <> 1 -- Excluding Administrator user with userld = 1
+    GROUP BY userld
+    ORDER BY login_count DESC
+    LIMIT 1
+) l ON u.userid = l.userld;
+
+
+--------------------------
+--------------------------
+
+Please select the correct choice which of the following is true with respect to TCP?
+
+Connection-oriented
+
+Process-to-process
+
+Transport layer protocol
+
+All of the above
+
+All of the above
+
+--------------------------
+--------------------------
+
+[IP/NETWORK]
+
+When running "ping <remoteHostIP>" command, there is "Request timed out" response. 
+Which of below may be the possible reason for "Request timed out" result of ping command?
+
+I.     Remote host does not have network connectivity.
+II.    One of intermediate routers to remote host is down.
+III.   Remote host's firewall disallows incoming TCP segments.
+IV.   The web server running on remote host is stopped.
+V.    The local host where ping is run, has no network interfaces.
+
+I, II, III, and V
+
+--------------------------
+--------------------------
