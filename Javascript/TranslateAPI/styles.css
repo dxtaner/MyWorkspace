@@ -1,0 +1,91 @@
+/* styles.css */
+
+/* Temel sayfa stilleri */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+/* Ana kart stilleri */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0;
+}
+
+/* Çeviri formu stilleri */
+#translate-form {
+    padding: 20px;
+}
+
+.input-field label {
+    color: #007bff;
+}
+
+/* Çevir butonu stilleri */
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 20px;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Çıkış kartı stilleri */
+#outputImage {
+    border-radius: 50%;
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+#outputLanguage {
+    margin: 0;
+}
+
+.card-content h5 {
+    margin: 20px 0;
+}
+
+#outputWord {
+    color: #007bff;
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
