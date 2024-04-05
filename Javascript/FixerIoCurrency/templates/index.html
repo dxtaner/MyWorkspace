@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Currency Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #007bff;
+        margin-bottom: 20px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .result {
+        font-size: 18px;
+        color: #007bff;
+      }
+
+      .error {
+        color: #f00;
+      }
+
+      .average-result {
+        font-weight: bold;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Currency Converter</h1>
+
+      <form method="POST">
+        <div class="form-group">
+          <label for="firstCurrency">From Currency:</label>
+          <select class="form-control" id="firstCurrency" name="firstCurrency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="TRY">TRY</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="secondCurrency">To Currency:</label>
+          <select
+            class="form-control"
+            id="secondCurrency"
+            name="secondCurrency">
+            <option value="TRY">TRY</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="AUD">AUD</option>
+            <option value="JPY">JPY</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="amount">Amount:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="amount"
+            name="amount"
+            placeholder="15"
+            required />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Convert</button>
+      </form>
+
+      {% if info %}
+      <div class="result">
+        <h2>Conversion Result:</h2>
+        <p>
+          {{ info.amount }} {{ info.firstCurrency }} is equal to {{
+          info.result|round(2) }} {{ info.secondCurrency }}
+        </p>
+      </div>
+      {% endif %} {% if error %}
+      <div class="error">
+        <h2>Error:</h2>
+        <p>{{ error }}</p>
+      </div>
+      {% endif %} {% if avg_result %}
+      <div class="average-result">
+        <h2>Average Conversion Result:</h2>
+        <p>{{ avg_result }}</p>
+      </div>
+      {% endif %}
+    </div>
+
+    <footer class="text-center mt-5">
+      &copy; 2023 Bu sayfa
+      <a href="https://github.com/dxtaner" target="_blank">dxtaner</a>
+      tarafından tasarlanmıştır.
+    </footer>
+  </body>
+</html>
