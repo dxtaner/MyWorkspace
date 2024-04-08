@@ -1,0 +1,206 @@
+/* Ana Konteyner */
+.searchContainer {
+    padding: 20px;
+}
+
+/* Arama Kartı */
+.search {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#githubname {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.btn-dark:hover {
+    background-color: #292b2c;
+}
+
+.search h3 {
+    color: #333;
+}
+
+.search .lead {
+    color: #666;
+}
+
+/* Profil Kartı */
+#profile {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Repolar Kartı */
+#repos {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Son Aramalar Kartı */
+#lastSearch {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
+}
+
+/* Son Aramalar Listesi */
+#last-users {
+    list-style: none;
+    padding: 0;
+}
+
+#last-users li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Temizle Düğmesi */
+#clear-last-users {
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#clear-last-users:hover {
+    background-color: #292b2c;
+}
+
+/* Profil bölümü stil */
+#profile {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Repolar bölümü stil */
+#repos {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Repo kartları */
+.card-body.repo-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Repo adı bağlantısı */
+#repoName {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#repoName:hover {
+    text-decoration: underline;
+}
+
+/* Butonlar ve badge'ler */
+.btn-secondary,
+.btn-info {
+    margin-right: 10px;
+}
+
+.btn-secondary:hover,
+.btn-info:hover {
+    background-color: #343a40;
+}
+
+.badge-light {
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Oluşturulma ve Güncellenme Tarihi */
+.repo-date {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* İkonlar */
+.fa-star,
+.fa-code-branch {
+    margin-right: 5px;
+    color: #f0ad4e;
+}
+
+/* Son Aramalar bölümü stil */
+#lastSearch {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
+}
+
+/* Son aramalar listesi stil */
+#last-users {
+    list-style: none;
+    padding: 0;
+}
+
+#last-users li {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Temizle düğmesi stil */
+#clear-last-users {
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#clear-last-users:hover {
+    background-color: #292b2c;
+}
