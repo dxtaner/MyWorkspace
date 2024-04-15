@@ -1,0 +1,14 @@
+/* Contacts.css */
+#container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid gray;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+h1 {
+    color: #151313;
+}
