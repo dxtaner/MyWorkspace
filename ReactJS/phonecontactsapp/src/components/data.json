@@ -1,0 +1,20 @@
+[
+  {
+    "fullname": "Arda",
+    "phone_number": 21312312,
+    "email": "arda@example.com",
+    "address": "123 Main St, City"
+  },
+  {
+    "fullname": "Semih",
+    "phone_number": 12312133,
+    "email": "semih@example.com",
+    "address": "456 Oak St, Town"
+  },
+  {
+    "fullname": "Emin",
+    "phone_number": 3444343,
+    "email": "emin@example.com",
+    "address": "789 Pine St, Village"
+  }
+]
