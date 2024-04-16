@@ -1,0 +1,36 @@
+/* List.css */
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background-color: #f8f8f8;
+}
+
+strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+p {
+    color: #666;
+    margin: 8px 0;
+}
