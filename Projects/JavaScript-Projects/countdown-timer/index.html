@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geri Sayım Zamanlayıcı</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Geri Sayım Zamanlayıcı</h1>
+
+    <div class="input-container">
+      <label for="countdownDate">Hedef Tarih ve Saat:</label>
+      <input type="datetime-local" id="countdownDate" />
+      <button id="startCountdown">Başlat</button>
+    </div>
+
+    <div class="countdown-container">
+      <div class="countdown-el">
+        <p id="days">0</p>
+        <span>Gün</span>
+      </div>
+      <div class="countdown-el">
+        <p id="hours">0</p>
+        <span>Saat</span>
+      </div>
+      <div class="countdown-el">
+        <p id="mins">0</p>
+        <span>Dakika</span>
+      </div>
+      <div class="countdown-el">
+        <p id="seconds">0</p>
+        <span>Saniye</span>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
