@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![Home](https://github.com/dxtaner/MyWorkspace/blob/master/ReactJS/markdown-previewer-app/screenshots/home.gif)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
