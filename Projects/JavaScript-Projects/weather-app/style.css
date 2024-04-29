@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(120deg, #0c6a99, #7a8a99);
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    color: #fff;
+}
+
+input {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 1rem;
+    min-width: 300px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.weather {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.weather h2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.weather small {
+    font-size: 1rem;
+    color: #ddd;
+    margin-top: 0.5rem;
+}
+
+.weather p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.weather img {
+    margin: 0 0.5rem;
+}
+
+.weather .description {
+    color: #eee;
+    font-weight: 800;
+}
+
+.weather .sun-info {
+    font-size: 0.9rem;
+    color: #ccc;
+    font-weight: 800;
+}
