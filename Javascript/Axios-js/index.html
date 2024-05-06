@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Js Dersleri</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: "Nunito", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-12 col-md-7 mx-auto">
+          <div class="card shadow-lg mb-4">
+            <div class="card-header bg-secondary">
+              <h1 class="text-white text-center m-0 py-2">
+                Axios Detaylı Kulanımı
+              </h1>
+            </div>
+            <div style="height: 100px" class="card-body bg-light">
+              <span class="text-center">Popüler HTTP kütüphanesi</span>
+            </div>
+            <div
+              class="card-footer bg-secondary d-flex justify-content-between">
+              <button
+                id="getBtn"
+                style="width: 87px"
+                class="btn btn-warning text-uppercase w-20">
+                get
+              </button>
+              <button
+                id="postBtn"
+                style="width: 87px"
+                class="btn btn-success text-uppercase w-20">
+                post
+              </button>
+              <button
+                id="putBtn"
+                style="width: 87px"
+                class="btn btn-primary text-uppercase w-20">
+                put
+              </button>
+              <button
+                id="patchBtn"
+                style="width: 87px"
+                class="btn btn-info text-uppercase w-20">
+                patch
+              </button>
+              <button
+                id="deleteBtn"
+                style="width: 87px"
+                class="btn btn-danger text-uppercase w-20">
+                delete
+              </button>
+            </div>
+            <div
+              class="card-footer bg-secondary d-flex justify-content-between">
+              <button
+                id="headerBtn"
+                style="width: 150px"
+                class="btn btn-outline-success text-uppercase w-20">
+                headers
+              </button>
+              <button
+                id="multiBtn"
+                style="width: 150px"
+                class="btn btn-outline-primary text-uppercase w-20">
+                çoklu istek
+              </button>
+              <button
+                id="errorBtn"
+                style="width: 150px"
+                class="btn btn-outline-danger text-uppercase w-20">
+                hata
+              </button>
+            </div>
+          </div>
+          <div id="info"></div>
+          <div id="result"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="axios.min.js"></script>
+    <script>
+      //Button tanımları
+      const getBtn = document.querySelector("#getBtn");
+      const postBtn = document.querySelector("#postBtn");
+      const putBtn = document.querySelector("#putBtn");
+      const patchBtn = document.querySelector("#patchBtn");
+      const deleteBtn = document.querySelector("#deleteBtn");
+      const multiBtn = document.querySelector("#multiBtn");
+      const headerBtn = document.querySelector("#headerBtn");
+      const errorBtn = document.querySelector("#errorBtn");
+
+      // Event Listener
+      getBtn.addEventListener("click", getData);
+      postBtn.addEventListener("click", postData);
+      putBtn.addEventListener("click", putData);
+      patchBtn.addEventListener("click", patchData);
+      deleteBtn.addEventListener("click", deleteData);
+      multiBtn.addEventListener("click", multiData);
+      headerBtn.addEventListener("click", headerData);
+      errorBtn.addEventListener("click", errorView);
+
+      // Axios nesnesi oluşturma url
+      const axiosObj = axios.create({
+        baseURL: "https://jsonplaceholder.typicode.com/",
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          token: "api-token-degeri",
+        },
+      });
+
+      // Axios default config yapılandırması
+      axios.defaults.headers.common["X-Auth-Token"] = "api-token-degeri";
+
+      // Axios config yapılandırma
+      axios.interceptors.request.use((config) => {
+        document.querySelector(
+          "#info"
+        ).innerHTML = `<div class="card bg-info shadow-lg mb-4">
+                <div class="card-body">
+                    <div class="">
+                        <h5 class="card-title m-0">Axios isteği: </h5>
+                        <h5 class="card-title m-0">${
+                          config.url
+                        } Adresine ${config.method.toUpperCase()} isteği yapıldı.</h5>
+                    </div>
+                </div>
+            </div>`;
+        return config;
+      });
+      // Axios isteğinden sonra yazdırmadan önce araya girmek
+      axios.interceptors.response.use(
+        (response) => {
+          return response;
+        },
+        (error) => {
+          return Promise.reject(error);
+        }
+      );
+
+      function getData() {
+        axiosObj.get("users/4").then((response) => console.log(response));
+        /*
+                axios({
+                    method:"GET",
+                    url:"https://jsonplaceholder.typicode.com/users/",
+                    params:{
+                        _limit:2
+                    }
+                }).then(response => showResultView(response))
+                .catch(error => errorData(error))
+                .then(() => console.log("Get İsteği tamamlandı"))
+        */
+        /*        axios.get("https://jsonplaceholder.typicode.com/users/4", {
+            params: {
+                _limit: 2
+            }
+        })
+            .then(response => showResultView(response))
+            .catch(error => errorData(error))
+            .then(() => console.log("Get İsteği tamamlandı"))*/
+      }
+
+      function postData() {
+        /*        axios.post("https://jsonplaceholder.typicode.com/posts", {
+                    title: "Yeni Başlık",
+                    body: "Body Alanı",
+                    userId: 201,
+                }).then(response => showResultView(response))
+                    .catch(error => console.log(error))
+                    .then(() => console.log("Post İsteği bitti"))*/
+
+        axios
+          .post("https://jsonplaceholder.typicode.com/users", {
+            name: "Ömer Ölgün",
+            username: "Sessiz1i",
+            email: "omerolgn@gmail.com",
+            address: {
+              street: "2299",
+              suite: "Benim Apt.",
+              city: "İstanbul",
+              zipcode: "34265",
+              geo: {
+                lat: "99.9999",
+                lng: "99.9999",
+              },
+            },
+            phone: "+905554445566",
+            website: "benimsitem.com",
+            company: {
+              name: "Benim İşim",
+              catchPhrase: "Boş gezenler gezegeninde kıralım",
+              bs: "harness real-time e-markets",
+            },
+          })
+          .then((response) => showResultView(response))
+          .catch((error) => errorData(error))
+          .then(() => console.log("Post İsteği bitti"));
+      }
+
+      // PUT methodu güncelleme yaparken eski verilern hepsini siler.
+      // Sadece böderilen yeni veriler kalır.
+      function putData() {
+        axios
+          .put("https://jsonplaceholder.typicode.com/users/1", {
+            name: "Ömer Ölgün",
+            username: "Sessiz1i",
+            email: "omerolgn@gmail.com",
+          })
+          .then((response) => showResultView(response))
+          .catch((error) => errorData(error))
+          .then(() => console.log("Put İsteği bitti"));
+      }
+
+      // PATCH methodu güncelleme yaparken sadece gönderilen verileri değiştirir.
+      // Geri kalan veriler silinmez kaybolmaz.
+      function patchData() {
+        axios
+          .patch("https://jsonplaceholder.typicode.com/users/1", {
+            name: "Ömer Ölgün",
+            username: "Sessiz1i",
+            email: "omerolgn@gmail.com",
+          })
+          .then((response) => showResultView(response))
+          .catch((error) => errorData(error))
+          .then(() => console.log("Put İsteği bitti"));
+      }
+
+      function deleteData() {
+        axios
+          .delete("https://jsonplaceholder.typicode.com/users/1")
+          .then((response) => showResultView(response))
+          .catch((error) => errorData(error))
+          .then(() => console.log("DELETE İsteği bitti"));
+      }
+
+      function multiData() {
+        /*        axios.all([
+                    axios.get("https://jsonplaceholder.typicode.com/users/4")
+                        .then(response => showResultView(response))
+                        .catch(error => errorData(error))
+                        .then(() => console.log("Get İsteği tamamlandı")),
+                    axios.put("https://jsonplaceholder.typicode.com/users/1", {
+                        name: "Ömer Ölgün",
+                        username: "Sessiz1i",
+                        email: "omerolgn@gmail.com"
+                    })
+                        .then(response => showResultView(response))
+                        .catch(error => errorData(error))
+                        .then(() => console.log("Put İsteği bitti"))
+                ])
+        */
+        axios
+          .all([
+            axios.get("https://jsonplaceholder.typicode.com/users"),
+            axios.get("https://jsonplaceholder.typicode.com/posts"),
+          ])
+          .then(
+            axios.spread((users, posts) => {
+              showResultView(users);
+              showMultiResultView(posts);
+            })
+          );
+      }
+
+      function headerData() {
+        const config = {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "token",
+          },
+        };
+        axios
+          .put(
+            "https://jsonplaceholder.typicode.com/users/1",
+            {
+              name: "Ömer Ölgün",
+              username: "Sessiz1i",
+              email: "omerolgn@gmail.com",
+            },
+            config
+          )
+          .then((response) => showResultView(response))
+          .catch((error) => errorData(error))
+          .then(() => console.log("Put İsteği bitti"));
+      }
+
+      function errorView() {
+        axios
+          .put("https://jsonplaceholder.typicode.com/userssss/1", {
+            name: "Ömer Ölgün",
+            username: "Sessiz1i",
+            email: "omerolgn@gmail.com",
+          })
+          .then((response) => showResultView(response))
+          .catch((error) => errorResponse(error))
+          .then(() => console.log("Put İsteği bitti"));
+      }
+
+      function errorResponse(error) {
+        document.querySelector(
+          "#result"
+        ).innerHTML = `<div class="card bg-white shadow-lg mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Sonuç</h5>
+                    <p class="card-text"><pre>${JSON.stringify(
+                      error.response.status,
+                      null,
+                      2
+                    )}</pre></p>
+                </div>
+            </div>`;
+      }
+      function errorData(error) {
+        console.log(error);
+        document.querySelector(
+          "#result"
+        ).innerHTML = `<div class="card bg-info shadow-lg mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Sonuç</h5>
+                    <p class="card-text">${error}</p>
+                </div>
+            </div>`;
+      }
+
+      function showResultView(response) {
+        document.querySelector(
+          "#result"
+        ).innerHTML = `<div class="card bg-info shadow-lg mb-4">
+                <div class="card-body">
+                    <div class="col-4 d-flex justify-content-between">
+                        <h5 class="card-title m-0">Sonuç: </h5>
+                        <h5 class="card-title m-0">${JSON.stringify(
+                          response.status
+                        )}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow-lg mb-4">
+                <div class="card-header bg-primary">
+                    <h4 class="m-0 text-white">Header</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><pre>${JSON.stringify(
+                      response.headers,
+                      null,
+                      2
+                    )}</pre></p>
+                </div>
+            </div>
+            <div class="card shadow-lg mb-4">
+                <div class="card-header bg-warning">
+                    <h4 class="m-0 text-white">Data</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><pre>${JSON.stringify(
+                      response.data,
+                      null,
+                      2
+                    )}</pre></p>
+                </div>
+            </div>
+            <div class="card shadow-lg mb-4">
+                <div style="background: #55ba55" class="card-header">
+                    <h4 class="m-0 text-white">Config</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><pre>${JSON.stringify(
+                      response.config,
+                      null,
+                      2
+                    )}</pre></p>
+                </div>
+            </div>
+`;
+      }
+
+      function showMultiResultView(response) {
+        document.querySelector(
+          "#result"
+        ).innerHTML += `<div class="card bg-info shadow-lg mb-4">
+                <div class="card-body">
+                    <div class="col-4 d-flex justify-content-between">
+                        <h5 class="card-title m-0">Sonuç: </h5>
+                        <h5 class="card-title m-0">${JSON.stringify(
+                          response.status
+                        )}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow-lg mb-4">
+                <div class="card-header bg-primary">
+                    <h4 class="m-0 text-white">Header</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><pre>${JSON.stringify(
+                      response.headers,
+                      null,
+                      2
+                    )}</pre></p>
+                </div>
+            </div>
+            <div class="card shadow-lg mb-4">
+                <div class="card-header bg-warning">
+                    <h4 class="m-0 text-white">Data</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><pre>${JSON.stringify(
+                      response.data,
+                      null,
+                      2
+                    )}</pre></p>
+                </div>
+            </div>
+            <div class="card shadow-lg mb-4">
+                <div style="background: #55ba55" class="card-header">
+                    <h4 class="m-0 text-white">Config</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><pre>${JSON.stringify(
+                      response.config,
+                      null,
+                      2
+                    )}</pre></p>
+                </div>
+            </div>
+`;
+      }
+    </script>
+  </body>
+</html>
