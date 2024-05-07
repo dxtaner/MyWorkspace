@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Management</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Add Course</h2>
+          <form id="new-course">
+            <hr />
+            <div class="form-group">
+              <label> Course Title</label>
+              <input type="text" id="title" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label> Course Instructor</label>
+              <input type="text" id="instructor" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label> Course Image</label>
+              <input type="text" id="image" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Add Course</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h2>Course List</h2>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Course Image</th>
+                <th>Course Title</th>
+                <th>Course Instructor</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="course-list">
+              <!-- Courses will be inserted here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
