@@ -1,0 +1,140 @@
+:root {
+    --main-color: rgba(41, 128, 185, 1.0);
+    --main-color-light: rgba(41, 128, 185, 0.2);
+    --accent-color: rgba(243, 156, 18, 1.0);
+    --accent-color-light: rgba(243, 156, 18, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-image: linear-gradient(to bottom right, var(--main-color), var(--main-color-light));
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.main-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+header,
+form {
+    padding-top: 100px;
+    /*  min-height: 10rem;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedback {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.form-item {
+    padding: .5rem;
+    font-size: 1.5rem;
+    border: none;
+    background-color: white;
+    outline: none;
+
+}
+
+.input-gorev {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.btn-gorev-ekle {
+    width: 50px;
+    color: var(--accent-color);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.btn-gorev-ekle:hover {
+    cursor: pointer;
+    width: 50px;
+    color: white;
+    background-color: var(--accent-color);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.gorev-container {
+    padding-top: 75px;
+    margin: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.gorev-listesi {
+    list-style: none;
+    min-width: 375px;
+
+}
+
+.gorev-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .5rem;
+    font-size: 1.3rem;
+    border: none;
+    background-color: white;
+    outline: none;
+    border-radius: 5px;
+    transition: .5s ease-in-out;
+}
+
+.gorev-tanim {
+    flex: 1;
+    padding: .5rem;
+
+}
+
+.gorev-btn {
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    background-color: var(--accent-color);
+    outline: none;
+    border: none;
+    font-size: 1.3rem;
+    padding: 0.8rem;
+}
+
+.btn-sil {
+    background-color: #ff5050;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.pasif-gorev {
+    opacity: 0.4;
+}
+
+.pasif-gorev-tanim {
+    text-decoration: line-through;
+}
+
+.far {
+    pointer-events: none;
+}
+
+.kaybol {
+    transform: scale(0);
+}
