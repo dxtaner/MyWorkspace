@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Not Sepeti</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="main-title">Not Sepeti</h1>
+    </header>
+    <form action="">
+      <input
+        onchange="form.input.value=toTitleCase(this.value)"
+        onkeyup="form.input.value=toTitleCase(this.value)"
+        type="text"
+        name="input"
+        class="input-gorev form-item is-invalid"
+        placeholder="Yeni Not Oluştur..."
+        autocomplete="off" />
+      <button class="form-item btn-gorev-ekle" type="submit">
+        <i class="far fa-plus-square"></i>
+      </button>
+    </form>
+    <div class="invalid-feedback">
+      <span class="feedback"></span>
+    </div>
+    <div class="gorev-container">
+      <ul class="gorev-listesi"></ul>
+    </div>
+  </body>
+  <script src="script.js" type="text/javascript"></script>
+</html>
