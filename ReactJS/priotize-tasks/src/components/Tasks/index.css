@@ -1,0 +1,101 @@
+.layout-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.layout-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.large {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.mx-8 {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.card {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.pt-30 {
+    padding-top: 30px;
+}
+
+.pb-8 {
+    padding-bottom: 8px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.danger {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.danger:hover {
+    background-color: #ff1a1a;
+}
+
+/* Styles for the Add Task button */
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
