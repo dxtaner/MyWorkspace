@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Şakacı</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="assets/css/bulma.css" />
+  </head>
+  <body>
+    <nav
+      class="hero navbar is-primary is-bold has-shadow"
+      role="navigation"
+      aria-label="main navigation">
+      <div class="navbar-brand">
+        <div class="container has-text-centered">
+          <div class="block">
+            <h1 class="title pt-5">Nee! şakamı bu?</h1>
+          </div>
+          <div class="block">
+            <span class="subtitle">Chuck Norris Replikleri</span>
+          </div>
+          <div class="block">
+            <button
+              style="width: 300px"
+              class="button is-danger is-uppercase get-joke">
+              şakala beni...
+            </button>
+          </div>
+          <div class="block"></div>
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="columns">
+        <div class="column is-offset-4 is-4">
+          <div id="result-view"></div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="assets/js/core.js"></script>
+  </body>
+</html>
