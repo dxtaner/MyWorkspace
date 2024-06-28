@@ -1,0 +1,98 @@
+/* Temel stiller */
+body {
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    /* Kenar yuvarlamaları daha net hale getirir */
+}
+
+/* Başlık stilleri */
+header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.established {
+    font-size: 18px;
+}
+
+/* Menü bölümü stilleri */
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+section {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Hafif bir arka plan opaklığı ekler */
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: transform 0.2s;
+    /* Hover etkisi için */
+}
+
+.item:hover {
+    transform: scale(1.05);
+    /* Hover'da büyüme efekti ekler */
+}
+
+/* İçerik resimleri */
+img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Footer stilleri */
+.bottom-line {
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.address {
+    font-size: 18px;
+    margin-top: 10px;
+}
