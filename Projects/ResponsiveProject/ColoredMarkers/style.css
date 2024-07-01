@@ -1,0 +1,54 @@
+/* Center the h1 element */
+h1 {
+    text-align: center;
+}
+
+/* Style for the container */
+.container {
+    background-color: #fff;
+    padding: 10px 0;
+}
+
+/* Styling for the marker */
+.marker {
+    width: 200px;
+    height: 25px;
+    margin: 10px auto;
+}
+
+/* Styling for the cap and sleeve */
+.cap {
+    width: 60px;
+    height: 25px;
+}
+
+.sleeve {
+    width: 110px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-left: 10px double rgba(0, 0, 0, 0.75);
+}
+
+/* Display cap and sleeve inline */
+.cap,
+.sleeve {
+    display: inline-block;
+}
+
+/* Styling for the red marker */
+.red {
+    background: linear-gradient(45deg, rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27));
+    box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8);
+}
+
+/* Styling for the green marker */
+.green {
+    background: linear-gradient(45deg, #55680D, #71F53E, #116C31);
+    box-shadow: 0 0 20px 0 #3B7E20CC;
+}
+
+/* Styling for the blue marker */
+.blue {
+    background: linear-gradient(45deg, hsl(186, 76%, 16%), hsl(223, 90%, 60%), hsl(240, 56%, 42%));
+    box-shadow: 0 0 20px 0 hsla(223, 59%, 31%, 0.8);
+}
