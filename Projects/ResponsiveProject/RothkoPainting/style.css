@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.frame {
+    background-color: #333;
+    padding: 10px;
+    border: 10px solid #666;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.canvas {
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.one {
+    background-color: #ff0000;
+}
+
+.two {
+    background-color: #00ff00;
+}
+
+three {
+    background-color: #0000ff;
+}
