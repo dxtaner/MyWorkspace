@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shell Script Documentation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Shell Scripting Tutorial</header>
+      <ul>
+        <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+        <li><a href="#What_is_Shell?" class="nav-link">What is Shell?</a></li>
+        <li><a href="#Variables" class="nav-link">Variables</a></li>
+        <li>
+          <a href="#Special_Variables" class="nav-link">Special Variables</a>
+        </li>
+        <li><a href="#Arrays" class="nav-link">Arrays</a></li>
+        <li><a href="#Basic_Operators" class="nav-link">Basic Operators</a></li>
+        <li><a href="#Decision_Making" class="nav-link">Decision Making</a></li>
+        <li><a href="#Shell_Loops" class="nav-link">Shell Loops</a></li>
+        <li><a href="#Loop_Control" class="nav-link">Loop Control</a></li>
+        <li><a href="#Functions" class="nav-link">Functions</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+          <p>
+            A shell script is a computer program designed to be run by the
+            Unix/Linux shell which could be one of the following:
+          </p>
+          <ul>
+            <li>The Bourne Shell</li>
+            <li>The C Shell</li>
+            <li>The Korn Shell</li>
+            <li>The GNU Bourne-Again Shell</li>
+          </ul>
+          <p>
+            A shell is a command-line interpreter and typical operations
+            performed by shell scripts include file manipulation, program
+            execution, and printing text.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="What_is_Shell?">
+        <header>What is Shell?</header>
+        <article>
+          <p>
+            Shell is an environment in which we can run our commands, programs,
+            and shell scripts. There are different flavors of a shell, just as
+            there are different flavors of operating systems. Each flavor of
+            shell has its own set of recognized commands and functions.
+          </p>
+          <h4>Shell Prompt</h4>
+          <p>
+            The prompt, $, which is called the command prompt, is issued by the
+            shell. While the prompt is displayed, you can type a command.
+          </p>
+          <p>
+            Shell reads your input after you press Enter. It determines the
+            command you want executed by looking at the first word of your
+            input. A word is an unbroken set of characters. Spaces and tabs
+            separate words.
+          </p>
+          <p>
+            Following is a simple example of the date command, which displays
+            the current date and time
+          </p>
+          <pre>
+            <code>
+            $date 
+            Thu Jan 26 13:11:19 MST 2023 
+            </code>
+          </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Variables">
+        <header>Variables</header>
+        <article>
+          <p>
+            A variable is a character string to which we assign a value. The
+            value assigned could be a number, text, filename, device, or any
+            other type of data.
+          </p>
+          <h4>Variable Names</h4>
+          <p>
+            The name of a variable can contain only letters (a to z or A to Z),
+            numbers ( 0 to 9) or the underscore character ( _ ).
+          </p>
+          <p>The following examples are valid variable names -</p>
+          <pre>
+            <code>
+                _ALI
+                TOKEN_A
+                VAR_1
+                VAR_2
+            </code>
+          </pre>
+          <p>Following are the examples of invalid variable names -</p>
+          <pre>
+            <code>
+                2_VAR
+                -VARIABLE
+                VAR1-VAR2
+                VAR_A!
+            </code>
+          </pre>
+          <p>
+            The reason you cannot use other characters such as !, *, or - is
+            that these characters have a special meaning for the shell.
+          </p>
+          <h4>Accessing Values</h4>
+          <p>
+            To access the value stored in a variable, prefix its name with the
+            dollar sign ($)
+          </p>
+          <pre>
+            <code>
+                #! /bin/sh
+
+                GREETING="Hello World"
+                echo $GREETING
+            </code>
+          </pre>
+          <p>The above script will produce the following value -</p>
+          <code> Hello World </code>
+        </article>
+      </section>
+      <section class="main-section" id="Special_Variables">
+        <header>Special Variables</header>
+        <article>
+          <p>
+            In one of our previous chapters, we understood how to be careful
+            when we use certain nonalphanumeric characters in variable names.
+            This is because those characters are used in the names of special
+            Unix variables. These variables are reserved for specific functions.
+          </p>
+          <p>
+            The following list shows a number of special variables that you can
+            use in your shell scripts -
+          </p>
+          <ul>
+            <li>$0 &#8594; The filename of the current script</li>
+            <li>$# &#8594; The number of arguments supplied to a script.</li>
+            <li>$? &#8594; The exit status of the last command executed.</li>
+            <li>
+              $$ &#8594; The process number of the current shell. For shell
+              scripts, this is the process ID under which they are executing.
+            </li>
+            <li>
+              $! &#8594; The process number of the last background command.
+            </li>
+            <li>
+              $@ &#8594; All the arguments are individually double quoted. If a
+              script receives two arguments, $@ is equivalent to $1 $2.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Arrays">
+        <header>Arrays</header>
+        <article>
+          <p>
+            Shell supports a different type of variable called an array
+            variable. This can hold multiple values at the same time. Arrays
+            provide a method of grouping a set of variables. Instead of creating
+            a new name for each variable that is required, you can use a single
+            array variable that stores all the other variables.
+          </p>
+          <h4>Defining Array Values</h4>
+          <p>
+            Suppose you are trying to represent the names of various students as
+            a set of variables. Each of the individual variables is a scalar
+            variable as follows −
+          </p>
+          <pre>
+            <code>
+                NAME01="Oliver"
+                NAME03="Florence"
+                NAME04="Oscar"
+                NAME05="Olivia"
+                NAME02="Harry"
+            </code>
+          </pre>
+          <p>
+            We can use a single array to store all the above mentioned names.
+            Following is the simplest method of creating an array variable. This
+            helps assign a value to one of its indices.
+          </p>
+          <code> array_name[index]=value </code>
+          <p>
+            Here <var>array_name</var> is the name of the array, index is the
+            index of the item in the array that you want to set, and value is
+            the value you want to set for that item.
+          </p>
+          <p>As an example, the following commands −</p>
+          <pre>
+            <code>
+                NAME[0]="Oliver"
+                NAME[1]="Florence"
+                NAME[2]="Oscar"
+                NAME[3]="Olivia"
+                NAME[4]="Harry"
+            </code>
+          </pre>
+          <h4>Accessing Array Values</h4>
+          <p>
+            After you have set any array variable, you access it as follows −
+          </p>
+          <code>${array_name[index]}</code>
+          <p>
+            Here <var>array_name</var> is the name of the array, and
+            <var>index</var> is the index of the value to be accessed. Following
+            is an example to understand the concept −
+          </p>
+          <pre>
+            <code>
+                NAME[0]="Oliver"
+                NAME[1]="Florence"
+                NAME[2]="Oscar"
+                NAME[3]="Olivia"
+                NAME[4]="Harry"
+                echo "First Index: ${NAME[0]}"
+                echo "Second Index: ${NAME[1]}"
+            </code>
+          </pre>
+          <p>The above example will generate the following result −</p>
+          <pre>
+            <code>
+                First Index: Oliver
+                Second Index: Florence
+            </code>
+          </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Basic_Operators">
+        <header>Basic Operators</header>
+        <article>
+          <p>
+            Bourne shell didn't originally have any mechanism to perform simple
+            arithmetic operations but it uses external programs, either
+            <b>awk</b> or <b>expr</b>.
+          </p>
+          <p>The following example shows how to add two numbers −</p>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                val=`expr 2 + 2`
+                echo "Total value : $val"
+            </code>
+          </pre>
+          <p>The above script will generate the following result −</p>
+          <code>Total value : 4</code>
+          <h4>Arithmetic Operators</h4>
+          <p>
+            The following arithmetic operators are supported by Bourne Shell
+          </p>
+          <ul>
+            <li>+ (Addition)</li>
+            <li>- (Subtraction)</li>
+            <li>* (Multiplication)</li>
+            <li>/ (Division)</li>
+            <li>% (Modulus)</li>
+            <li>= (Assignment)</li>
+            <li>== (Equality</li>
+            <li>!= (Not Equality</li>
+          </ul>
+          <h4>Relational Operators</h4>
+          <p>
+            Bourne Shell supports the following relational operators that are
+            specific to numeric values. These operators do not work for string
+            values unless their value is numeric.
+          </p>
+          <ul>
+            <li>-eq (Equal)</li>
+            <li>-ne (Not equal)</li>
+            <li>-gt (Greater than)</li>
+            <li>-lt (Less than)</li>
+            <li>-ge (Greater than or equal)</li>
+            <li>-le (Less than or equal)</li>
+          </ul>
+          <h4>Boolean Operators</h4>
+          <p>
+            The following Boolean operators are supported by the Bourne Shell.
+          </p>
+          <ul>
+            <li>! (Not)</li>
+            <li>-o (Or)</li>
+            <li>-a (And)</li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Decision_Making">
+        <header>Decision Making</header>
+        <article>
+          <p>
+            While writing a shell script, there may be a situation when you need
+            to adopt one path out of the given two paths. So you need to make
+            use of conditional statements that allow your program to make
+            correct decisions and perform the right actions.
+          </p>
+          <h4>The if...else statements</h4>
+          <p>
+            If else statements are useful decision-making statements which can
+            be used to select an option from a given set of options.
+          </p>
+          <h5>Syntax</h5>
+          <pre>
+            <code>
+                if [ expression 1 ]
+                then
+                   Statement(s) to be executed if expression 1 is true
+                elif [ expression 2 ]
+                then
+                   Statement(s) to be executed if expression 2 is true
+                elif [ expression 3 ]
+                then
+                   Statement(s) to be executed if expression 3 is true
+                else
+                   Statement(s) to be executed if no expression is true
+                fi
+            </code>
+          </pre>
+          <p>
+            This code is just a series of if statements, where each if is part
+            of the else clause of the previous statement. Here statement(s) are
+            executed based on the true condition, if none of the condition is
+            true then else block is executed.
+          </p>
+          <h5>Example</h5>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                a=10
+                b=20
+
+                if [ $a == $b ]
+                then
+                   echo "a is equal to b"
+                elif [ $a -gt $b ]
+                then
+                   echo "a is greater than b"
+                elif [ $a -lt $b ]
+                then
+                   echo "a is less than b"
+                else
+                   echo "None of the condition met"
+                fi
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following result -</p>
+          <code>a is less than b</code>
+          <h4>The case...esac statement</h4>
+          <p>
+            You can use multiple <b>if...elif</b> statements to perform a
+            multiway branch. However, this is not always the best solution,
+            especially when all of the branches depend on the value of a single
+            variable.
+          </p>
+          <p>
+            Shell supports <b>case...esac</b> statement which handles exactly
+            this situation, and it does so more efficiently than repeated
+            if...elif statements
+          </p>
+          <h5>Syntax</h5>
+          <pre>
+            <code>
+                case word in
+                 pattern1)
+                    Statement(s) to be executed if pattern1 matches
+                    ;;
+                 pattern2)
+                    Statement(s) to be executed if pattern2 matches
+                    ;;
+                 pattern3)
+                    Statement(s) to be executed if pattern3 matches
+                    ;;
+                 *)
+                    Default condition to be executed
+                    ;;
+                esac
+            </code>
+          </pre>
+          <p>
+            Here the string word is compared against every pattern until a match
+            is found. The statement(s) following the matching pattern executes.
+            If no matches are found, the case statement exits without performing
+            any action.
+          </p>
+          <h5>Example</h5>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                FRUIT="kiwi"
+
+                case "$FRUIT" in
+                   "apple") echo "Apple pie is quite tasty." 
+                   ;;
+                   "banana") echo "I like banana nut bread." 
+                   ;;
+                   "kiwi") echo "New Zealand is famous for kiwi." 
+                   ;;
+                esac
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following result −</p>
+          <code>New Zealand is famous for kiwi.</code>
+        </article>
+      </section>
+      <section class="main-section" id="Shell_Loops">
+        <header>Shell Loops</header>
+        <article>
+          <p>
+            A loop is a powerful programming tool that enables you to execute a
+            set of commands repeatedly. In this chapter, we will examine the
+            while and for loop.
+          </p>
+          <h4>While Loop</h4>
+          <p>The syntax is as follows:</p>
+          <pre>
+            <code>
+                while [ condition ]
+                do
+                   command1
+                   command2
+                   command3
+                done
+            </code>
+          </pre>
+          <h5>Example</h5>
+          <pre>
+            <code>
+                #!/bin/bash
+
+                x=1
+                while [ $x -le 5 ]
+                do
+                echo "Welcome $x times"
+                x=$(( $x + 1 ))
+                done
+            </code>
+          </pre>
+          <p>You will receive the following result -</p>
+          <pre>
+            <code>
+                Welcome 1 times
+                Welcome 2 times
+                Welcome 3 times
+                Welcome 4 times
+                Welcome 5 times
+            </code>
+          </pre>
+          <h4>For Loop</h4>
+          <p>
+            The for loop operates on lists of items. It repeats a set of
+            commands for every item in a list.
+          </p>
+          <h5>Syntax</h5>
+          <pre>
+            <code>
+                for var in word1 word2 ... wordN
+                do
+                     Statement(s) to be executed for every word.
+                done
+            </code>
+          </pre>
+          <p>
+            Here <var>var</var> is the name of a variable and word1 to wordN are
+            sequences of characters separated by spaces (words). Each time the
+            for loop executes, the value of the variable var is set to the next
+            word in the list of words, word1 to wordN.
+          </p>
+          <h5>Example</h5>
+          <p>
+            Here is a simple example that uses the for loop to span through the
+            given list of numbers −
+          </p>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                for var in 0 1 2 3 4 5 6 7 8 9
+                do
+                    echo $var
+                done    
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following result -</p>
+          <pre>
+            <code>
+                0
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+            </code>
+          </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Loop_Control">
+        <header>Loop Control</header>
+        <article>
+          <p>
+            In this chapter, we will discuss shell loop control in Unix. So far
+            you have looked at creating loops and working with loops to
+            accomplish different tasks. Sometimes you need to stop a loop or
+            skip iterations of the loop.
+          </p>
+          <p>
+            In this chapter, we will learn following two statements that are
+            used to control shell loops -
+          </p>
+          <ul>
+            <li>The <b>break</b> statement</li>
+            <li>The <b>continue</b> statement</li>
+          </ul>
+          <h4>The break Statement</h4>
+          <p>
+            The break statement is used to terminate the execution of the entire
+            loop, after completing the execution of all of the lines of code up
+            to the break statement. It then steps down to the code following the
+            end of the loop.
+          </p>
+          <h5>Example</h5>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                a=0
+
+                while [ $a -lt 10 ]
+                do
+                   echo $a
+                   if [ $a -eq 5 ]
+                   then
+                      break
+                   fi
+                   a=`expr $a + 1`
+                done
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following result -</p>
+          <pre>
+            <code>
+                0
+                1
+                2
+                3
+                4
+                5
+            </code>
+          </pre>
+          <h4>The continue Statement</h4>
+          <p>
+            The <b>continue</b> statement is similar to the
+            <b>break</b> command, except that it causes the current iteration of
+            the loop to exit, rather than the entire loop.
+          </p>
+          <p>
+            This statement is useful when an error has occurred but you want to
+            try to execute the next iteration of the loop.
+          </p>
+          <h5>Example</h5>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                NUMS="1 2 3 4 5 6 7"
+
+                for NUM in $NUMS
+                do
+                   Q=`expr $NUM % 2`
+                   if [ $Q -eq 0 ]
+                   then
+                      echo "Number is an even number!!"
+                      continue
+                   fi
+                   echo "Found odd number"
+                done
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following result −</p>
+          <pre>
+            <code>
+                Found odd number
+                Number is an even number!!
+                Found odd number
+                Number is an even number!!
+                Found odd number
+                Number is an even number!!
+                Found odd number
+            </code>
+          </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Functions">
+        <header>Functions</header>
+        <article>
+          <p>
+            In this chapter, we will discuss in detail about the shell
+            functions. Functions enable you to break down the overall
+            functionality of a script into smaller, logical subsections, which
+            can then be called upon to perform their individual tasks when
+            needed.
+          </p>
+          <p>
+            Using functions to perform repetitive tasks is an excellent way to
+            create code reuse. This is an important part of modern
+            object-oriented programming principles.
+          </p>
+          <h4>Creating Functions</h4>
+          <p>To declare a function, simply use the following syntax −</p>
+          <pre>
+            <code>
+                function_name () { 
+                    list of commands
+                }
+            </code>
+          </pre>
+          <p>
+            The name of your function is <b>function_name</b>, and that's what
+            you will use to call it from elsewhere in your scripts. The function
+            name must be followed by parentheses, followed by a list of commands
+            enclosed within braces.
+          </p>
+          <h5>Example</h5>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                # Define your function here
+                Hello () {
+                   echo "Hello World"
+                }
+
+                # Invoke your function
+                Hello
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following output −</p>
+          <pre>
+            <code>
+                $./test.sh
+                Hello World
+            </code>
+          </pre>
+          <h4>Pass Parameters to a Function</h4>
+          <p>
+            You can define a function that will accept parameters while calling
+            the function. These parameters would be represented by <b>$1</b>,
+            <b>$2</b> and so on.
+          </p>
+          <p>
+            Following is an example where we pass two parameters
+            <i>Taner</i> and <i>Özer</i>
+            and then we capture and print these parameters in the function.
+          </p>
+          <pre>
+            <code>
+                !/bin/sh
+
+                # Define your function here
+                Hello () {
+                   echo "Hello $1 $2"
+                }
+
+                # Invoke your function
+                Hello Taner Özer
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following result −</p>
+          <code>Hello Taner Özer</code>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shell Script Documentation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Shell Scripting Tutorial</header>
+      <ul>
+        <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+        <li><a href="#What_is_Shell?" class="nav-link">What is Shell?</a></li>
+        <li><a href="#Variables" class="nav-link">Variables</a></li>
+        <li>
+          <a href="#Special_Variables" class="nav-link">Special Variables</a>
+        </li>
+        <li><a href="#Arrays" class="nav-link">Arrays</a></li>
+        <li><a href="#Basic_Operators" class="nav-link">Basic Operators</a></li>
+        <li><a href="#Decision_Making" class="nav-link">Decision Making</a></li>
+        <li><a href="#Shell_Loops" class="nav-link">Shell Loops</a></li>
+        <li><a href="#Loop_Control" class="nav-link">Loop Control</a></li>
+        <li><a href="#Functions" class="nav-link">Functions</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+          <p>
+            A shell script is a computer program designed to be run by the
+            Unix/Linux shell which could be one of the following:
+          </p>
+          <ul>
+            <li>The Bourne Shell</li>
+            <li>The C Shell</li>
+            <li>The Korn Shell</li>
+            <li>The GNU Bourne-Again Shell</li>
+          </ul>
+          <p>
+            A shell is a command-line interpreter and typical operations
+            performed by shell scripts include file manipulation, program
+            execution, and printing text.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="What_is_Shell?">
+        <header>What is Shell?</header>
+        <article>
+          <p>
+            Shell is an environment in which we can run our commands, programs,
+            and shell scripts. There are different flavors of a shell, just as
+            there are different flavors of operating systems. Each flavor of
+            shell has its own set of recognized commands and functions.
+          </p>
+          <h4>Shell Prompt</h4>
+          <p>
+            The prompt, $, which is called the command prompt, is issued by the
+            shell. While the prompt is displayed, you can type a command.
+          </p>
+          <p>
+            Shell reads your input after you press Enter. It determines the
+            command you want executed by looking at the first word of your
+            input. A word is an unbroken set of characters. Spaces and tabs
+            separate words.
+          </p>
+          <p>
+            Following is a simple example of the date command, which displays
+            the current date and time
+          </p>
+          <pre>
+            <code>
+            $date 
+            Thu Jan 26 13:11:19 MST 2023 
+            </code>
+          </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Variables">
+        <header>Variables</header>
+        <article>
+          <p>
+            A variable is a character string to which we assign a value. The
+            value assigned could be a number, text, filename, device, or any
+            other type of data.
+          </p>
+          <h4>Variable Names</h4>
+          <p>
+            The name of a variable can contain only letters (a to z or A to Z),
+            numbers ( 0 to 9) or the underscore character ( _ ).
+          </p>
+          <p>The following examples are valid variable names -</p>
+          <pre>
+            <code>
+                _ALI
+                TOKEN_A
+                VAR_1
+                VAR_2
+            </code>
+          </pre>
+          <p>Following are the examples of invalid variable names -</p>
+          <pre>
+            <code>
+                2_VAR
+                -VARIABLE
+                VAR1-VAR2
+                VAR_A!
+            </code>
+          </pre>
+          <p>
+            The reason you cannot use other characters such as !, *, or - is
+            that these characters have a special meaning for the shell.
+          </p>
+          <h4>Accessing Values</h4>
+          <p>
+            To access the value stored in a variable, prefix its name with the
+            dollar sign ($)
+          </p>
+          <pre>
+            <code>
+                #! /bin/sh
+
+                GREETING="Hello World"
+                echo $GREETING
+            </code>
+          </pre>
+          <p>The above script will produce the following value -</p>
+          <code> Hello World </code>
+        </article>
+      </section>
+      <section class="main-section" id="Special_Variables">
+        <header>Special Variables</header>
+        <article>
+          <p>
+            In one of our previous chapters, we understood how to be careful
+            when we use certain nonalphanumeric characters in variable names.
+            This is because those characters are used in the names of special
+            Unix variables. These variables are reserved for specific functions.
+          </p>
+          <p>
+            The following list shows a number of special variables that you can
+            use in your shell scripts -
+          </p>
+          <ul>
+            <li>$0 &#8594; The filename of the current script</li>
+            <li>$# &#8594; The number of arguments supplied to a script.</li>
+            <li>$? &#8594; The exit status of the last command executed.</li>
+            <li>
+              $$ &#8594; The process number of the current shell. For shell
+              scripts, this is the process ID under which they are executing.
+            </li>
+            <li>
+              $! &#8594; The process number of the last background command.
+            </li>
+            <li>
+              $@ &#8594; All the arguments are individually double quoted. If a
+              script receives two arguments, $@ is equivalent to $1 $2.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Arrays">
+        <header>Arrays</header>
+        <article>
+          <p>
+            Shell supports a different type of variable called an array
+            variable. This can hold multiple values at the same time. Arrays
+            provide a method of grouping a set of variables. Instead of creating
+            a new name for each variable that is required, you can use a single
+            array variable that stores all the other variables.
+          </p>
+          <h4>Defining Array Values</h4>
+          <p>
+            Suppose you are trying to represent the names of various students as
+            a set of variables. Each of the individual variables is a scalar
+            variable as follows −
+          </p>
+          <pre>
+            <code>
+                NAME01="Oliver"
+                NAME03="Florence"
+                NAME04="Oscar"
+                NAME05="Olivia"
+                NAME02="Harry"
+            </code>
+          </pre>
+          <p>
+            We can use a single array to store all the above mentioned names.
+            Following is the simplest method of creating an array variable. This
+            helps assign a value to one of its indices.
+          </p>
+          <code> array_name[index]=value </code>
+          <p>
+            Here <var>array_name</var> is the name of the array, index is the
+            index of the item in the array that you want to set, and value is
+            the value you want to set for that item.
+          </p>
+          <p>As an example, the following commands −</p>
+          <pre>
+            <code>
+                NAME[0]="Oliver"
+                NAME[1]="Florence"
+                NAME[2]="Oscar"
+                NAME[3]="Olivia"
+                NAME[4]="Harry"
+            </code>
+          </pre>
+          <h4>Accessing Array Values</h4>
+          <p>
+            After you have set any array variable, you access it as follows −
+          </p>
+          <code>${array_name[index]}</code>
+          <p>
+            Here <var>array_name</var> is the name of the array, and
+            <var>index</var> is the index of the value to be accessed. Following
+            is an example to understand the concept −
+          </p>
+          <pre>
+            <code>
+                NAME[0]="Oliver"
+                NAME[1]="Florence"
+                NAME[2]="Oscar"
+                NAME[3]="Olivia"
+                NAME[4]="Harry"
+                echo "First Index: ${NAME[0]}"
+                echo "Second Index: ${NAME[1]}"
+            </code>
+          </pre>
+          <p>The above example will generate the following result −</p>
+          <pre>
+            <code>
+                First Index: Oliver
+                Second Index: Florence
+            </code>
+          </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Basic_Operators">
+        <header>Basic Operators</header>
+        <article>
+          <p>
+            Bourne shell didn't originally have any mechanism to perform simple
+            arithmetic operations but it uses external programs, either
+            <b>awk</b> or <b>expr</b>.
+          </p>
+          <p>The following example shows how to add two numbers −</p>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                val=`expr 2 + 2`
+                echo "Total value : $val"
+            </code>
+          </pre>
+          <p>The above script will generate the following result −</p>
+          <code>Total value : 4</code>
+          <h4>Arithmetic Operators</h4>
+          <p>
+            The following arithmetic operators are supported by Bourne Shell
+          </p>
+          <ul>
+            <li>+ (Addition)</li>
+            <li>- (Subtraction)</li>
+            <li>* (Multiplication)</li>
+            <li>/ (Division)</li>
+            <li>% (Modulus)</li>
+            <li>= (Assignment)</li>
+            <li>== (Equality</li>
+            <li>!= (Not Equality</li>
+          </ul>
+          <h4>Relational Operators</h4>
+          <p>
+            Bourne Shell supports the following relational operators that are
+            specific to numeric values. These operators do not work for string
+            values unless their value is numeric.
+          </p>
+          <ul>
+            <li>-eq (Equal)</li>
+            <li>-ne (Not equal)</li>
+            <li>-gt (Greater than)</li>
+            <li>-lt (Less than)</li>
+            <li>-ge (Greater than or equal)</li>
+            <li>-le (Less than or equal)</li>
+          </ul>
+          <h4>Boolean Operators</h4>
+          <p>
+            The following Boolean operators are supported by the Bourne Shell.
+          </p>
+          <ul>
+            <li>! (Not)</li>
+            <li>-o (Or)</li>
+            <li>-a (And)</li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Decision_Making">
+        <header>Decision Making</header>
+        <article>
+          <p>
+            While writing a shell script, there may be a situation when you need
+            to adopt one path out of the given two paths. So you need to make
+            use of conditional statements that allow your program to make
+            correct decisions and perform the right actions.
+          </p>
+          <h4>The if...else statements</h4>
+          <p>
+            If else statements are useful decision-making statements which can
+            be used to select an option from a given set of options.
+          </p>
+          <h5>Syntax</h5>
+          <pre>
+            <code>
+                if [ expression 1 ]
+                then
+                   Statement(s) to be executed if expression 1 is true
+                elif [ expression 2 ]
+                then
+                   Statement(s) to be executed if expression 2 is true
+                elif [ expression 3 ]
+                then
+                   Statement(s) to be executed if expression 3 is true
+                else
+                   Statement(s) to be executed if no expression is true
+                fi
+            </code>
+          </pre>
+          <p>
+            This code is just a series of if statements, where each if is part
+            of the else clause of the previous statement. Here statement(s) are
+            executed based on the true condition, if none of the condition is
+            true then else block is executed.
+          </p>
+          <h5>Example</h5>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                a=10
+                b=20
+
+                if [ $a == $b ]
+                then
+                   echo "a is equal to b"
+                elif [ $a -gt $b ]
+                then
+                   echo "a is greater than b"
+                elif [ $a -lt $b ]
+                then
+                   echo "a is less than b"
+                else
+                   echo "None of the condition met"
+                fi
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following result -</p>
+          <code>a is less than b</code>
+          <h4>The case...esac statement</h4>
+          <p>
+            You can use multiple <b>if...elif</b> statements to perform a
+            multiway branch. However, this is not always the best solution,
+            especially when all of the branches depend on the value of a single
+            variable.
+          </p>
+          <p>
+            Shell supports <b>case...esac</b> statement which handles exactly
+            this situation, and it does so more efficiently than repeated
+            if...elif statements
+          </p>
+          <h5>Syntax</h5>
+          <pre>
+            <code>
+                case word in
+                 pattern1)
+                    Statement(s) to be executed if pattern1 matches
+                    ;;
+                 pattern2)
+                    Statement(s) to be executed if pattern2 matches
+                    ;;
+                 pattern3)
+                    Statement(s) to be executed if pattern3 matches
+                    ;;
+                 *)
+                    Default condition to be executed
+                    ;;
+                esac
+            </code>
+          </pre>
+          <p>
+            Here the string word is compared against every pattern until a match
+            is found. The statement(s) following the matching pattern executes.
+            If no matches are found, the case statement exits without performing
+            any action.
+          </p>
+          <h5>Example</h5>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                FRUIT="kiwi"
+
+                case "$FRUIT" in
+                   "apple") echo "Apple pie is quite tasty." 
+                   ;;
+                   "banana") echo "I like banana nut bread." 
+                   ;;
+                   "kiwi") echo "New Zealand is famous for kiwi." 
+                   ;;
+                esac
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following result −</p>
+          <code>New Zealand is famous for kiwi.</code>
+        </article>
+      </section>
+      <section class="main-section" id="Shell_Loops">
+        <header>Shell Loops</header>
+        <article>
+          <p>
+            A loop is a powerful programming tool that enables you to execute a
+            set of commands repeatedly. In this chapter, we will examine the
+            while and for loop.
+          </p>
+          <h4>While Loop</h4>
+          <p>The syntax is as follows:</p>
+          <pre>
+            <code>
+                while [ condition ]
+                do
+                   command1
+                   command2
+                   command3
+                done
+            </code>
+          </pre>
+          <h5>Example</h5>
+          <pre>
+            <code>
+                #!/bin/bash
+
+                x=1
+                while [ $x -le 5 ]
+                do
+                echo "Welcome $x times"
+                x=$(( $x + 1 ))
+                done
+            </code>
+          </pre>
+          <p>You will receive the following result -</p>
+          <pre>
+            <code>
+                Welcome 1 times
+                Welcome 2 times
+                Welcome 3 times
+                Welcome 4 times
+                Welcome 5 times
+            </code>
+          </pre>
+          <h4>For Loop</h4>
+          <p>
+            The for loop operates on lists of items. It repeats a set of
+            commands for every item in a list.
+          </p>
+          <h5>Syntax</h5>
+          <pre>
+            <code>
+                for var in word1 word2 ... wordN
+                do
+                     Statement(s) to be executed for every word.
+                done
+            </code>
+          </pre>
+          <p>
+            Here <var>var</var> is the name of a variable and word1 to wordN are
+            sequences of characters separated by spaces (words). Each time the
+            for loop executes, the value of the variable var is set to the next
+            word in the list of words, word1 to wordN.
+          </p>
+          <h5>Example</h5>
+          <p>
+            Here is a simple example that uses the for loop to span through the
+            given list of numbers −
+          </p>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                for var in 0 1 2 3 4 5 6 7 8 9
+                do
+                    echo $var
+                done    
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following result -</p>
+          <pre>
+            <code>
+                0
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+            </code>
+          </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Loop_Control">
+        <header>Loop Control</header>
+        <article>
+          <p>
+            In this chapter, we will discuss shell loop control in Unix. So far
+            you have looked at creating loops and working with loops to
+            accomplish different tasks. Sometimes you need to stop a loop or
+            skip iterations of the loop.
+          </p>
+          <p>
+            In this chapter, we will learn following two statements that are
+            used to control shell loops -
+          </p>
+          <ul>
+            <li>The <b>break</b> statement</li>
+            <li>The <b>continue</b> statement</li>
+          </ul>
+          <h4>The break Statement</h4>
+          <p>
+            The break statement is used to terminate the execution of the entire
+            loop, after completing the execution of all of the lines of code up
+            to the break statement. It then steps down to the code following the
+            end of the loop.
+          </p>
+          <h5>Example</h5>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                a=0
+
+                while [ $a -lt 10 ]
+                do
+                   echo $a
+                   if [ $a -eq 5 ]
+                   then
+                      break
+                   fi
+                   a=`expr $a + 1`
+                done
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following result -</p>
+          <pre>
+            <code>
+                0
+                1
+                2
+                3
+                4
+                5
+            </code>
+          </pre>
+          <h4>The continue Statement</h4>
+          <p>
+            The <b>continue</b> statement is similar to the
+            <b>break</b> command, except that it causes the current iteration of
+            the loop to exit, rather than the entire loop.
+          </p>
+          <p>
+            This statement is useful when an error has occurred but you want to
+            try to execute the next iteration of the loop.
+          </p>
+          <h5>Example</h5>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                NUMS="1 2 3 4 5 6 7"
+
+                for NUM in $NUMS
+                do
+                   Q=`expr $NUM % 2`
+                   if [ $Q -eq 0 ]
+                   then
+                      echo "Number is an even number!!"
+                      continue
+                   fi
+                   echo "Found odd number"
+                done
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following result −</p>
+          <pre>
+            <code>
+                Found odd number
+                Number is an even number!!
+                Found odd number
+                Number is an even number!!
+                Found odd number
+                Number is an even number!!
+                Found odd number
+            </code>
+          </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Functions">
+        <header>Functions</header>
+        <article>
+          <p>
+            In this chapter, we will discuss in detail about the shell
+            functions. Functions enable you to break down the overall
+            functionality of a script into smaller, logical subsections, which
+            can then be called upon to perform their individual tasks when
+            needed.
+          </p>
+          <p>
+            Using functions to perform repetitive tasks is an excellent way to
+            create code reuse. This is an important part of modern
+            object-oriented programming principles.
+          </p>
+          <h4>Creating Functions</h4>
+          <p>To declare a function, simply use the following syntax −</p>
+          <pre>
+            <code>
+                function_name () { 
+                    list of commands
+                }
+            </code>
+          </pre>
+          <p>
+            The name of your function is <b>function_name</b>, and that's what
+            you will use to call it from elsewhere in your scripts. The function
+            name must be followed by parentheses, followed by a list of commands
+            enclosed within braces.
+          </p>
+          <h5>Example</h5>
+          <pre>
+            <code>
+                #!/bin/sh
+
+                # Define your function here
+                Hello () {
+                   echo "Hello World"
+                }
+
+                # Invoke your function
+                Hello
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following output −</p>
+          <pre>
+            <code>
+                $./test.sh
+                Hello World
+            </code>
+          </pre>
+          <h4>Pass Parameters to a Function</h4>
+          <p>
+            You can define a function that will accept parameters while calling
+            the function. These parameters would be represented by <b>$1</b>,
+            <b>$2</b> and so on.
+          </p>
+          <p>
+            Following is an example where we pass two parameters
+            <i>Taner</i> and <i>Özer</i>
+            and then we capture and print these parameters in the function.
+          </p>
+          <pre>
+            <code>
+                !/bin/sh
+
+                # Define your function here
+                Hello () {
+                   echo "Hello $1 $2"
+                }
+
+                # Invoke your function
+                Hello Taner Özer
+            </code>
+          </pre>
+          <p>Upon execution, you will receive the following result −</p>
+          <code>Hello Taner Özer</code>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
