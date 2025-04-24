@@ -1,72 +1,98 @@
-# Getting Started with Create React App
+React E-Commerce Application
+============================
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a basic e-commerce application built with React. Users can browse products, filter by category, add/remove items from the cart, and navigate between different pages such as About and a 404 Not Found page.
 
-## Available Scripts
+🚀 Features
+-----------
 
-In the project directory, you can run:
+*   Product listing and category filtering
+*   Add/remove products to/from the cart
+*   Update product quantity in the cart
+*   Page routing (with React Router)
+*   User notifications (via alertify.js)
+*   Responsive layout (using Reactstrap)
 
-### `npm start`
+📦 Installation
+---------------
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Requirements
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+*   Node.js must be installed
+*   `json-server` must be installed for mock API usage
 
-### `npm test`
+### Steps
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1.  Clone the repository:
+    
+        git clone https://github.com/dxtaner/MyWorkspace/tree/master/ReactJS/winder
+        cd winder
+    
+2.  Install dependencies:
+    
+        npm install
+    
+3.  Start the JSON Server:
+    
+    Place one of the following files in your project root as `db.json` and run:
+    
+        json-server --watch db.json --port 3000
+    
+    *   [dbpostsEwinder.json](https://github.com/dxtaner/MyWorkspace/blob/master/ReactJS/winder/api/dbpostsEwinder.json)
+    *   [dbwinder.json](https://github.com/dxtaner/MyWorkspace/blob/master/ReactJS/winder/api/dbwinder.json)
+4.  Start the React application:
+    
+        npm start
+    
 
-### `npm run build`
+🔧 Technologies Used
+--------------------
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+*   [React](https://reactjs.org/)
+*   [React Router](https://reactrouter.com/)
+*   [Reactstrap](https://reactstrap.github.io/)
+*   [Bootstrap](https://getbootstrap.com/)
+*   [AlertifyJS](https://alertifyjs.com/)
+*   [JSON Server](https://github.com/typicode/json-server)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+📁 Project Structure
+--------------------
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    src/
+    ├── App.js             # Main app component
+    ├── Navbar.js          # Navigation bar
+    ├── CategoryList.js    # Category list component
+    ├── ProductList.js     # Product list component
+    ├── CartList.js        # Cart component
+    ├── NotFound.js        # 404 component
+    ├── About.js           # About page
+    └── ...
+    
 
-### `npm run eject`
+📷 Screenshots
+--------------
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 🎞️ App Usage
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![App Usage](https://github.com/dxtaner/MyWorkspace/blob/master/ReactJS/winder/winder.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 📋 Category & Product Listing
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Category & Product Listing](https://github.com/dxtaner/MyWorkspace/blob/master/ReactJS/winder/winder2.gif)
 
-## Learn More
+🔗 API Data
+-----------
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+*   [dbpostsEwinder.json](https://github.com/dxtaner/MyWorkspace/blob/master/ReactJS/winder/api/dbpostsEwinder.json) – blog-like structure
+*   [dbwinder.json](https://github.com/dxtaner/MyWorkspace/blob/master/ReactJS/winder/api/dbwinder.json) – category & product structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🧑‍💻 Developer
+---------------
 
-### Code Splitting
+*   **Name:** Taner Özer
+*   **GitHub:** [@dxtaner](https://github.com/dxtaner)
+*   **Email:** tanerozer16@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* * *
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# react-weatherApp
-"# react-shoppingApp" 
+Happy coding! 🚀
