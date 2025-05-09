@@ -1,0 +1,6 @@
+ul.list-group
+  each category in categories
+    - const isActive = category._id === selectedCategory
+    a(href=`/categories/${category._id}`, class=`list-group-item ${isActive ? 'active' : ''}`) #{category.name}
+  if categories.length === 0
+    li.list-group-item No categories available
