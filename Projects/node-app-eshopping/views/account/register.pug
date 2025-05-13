@@ -1,0 +1,35 @@
+extends ../layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/forms.css")
+
+block content
+    if errorMessage
+        .alert.alert-danger.col-sm-7(role="alert") #{errorMessage}
+
+    .container.mt-5
+        h2.text-center Register
+
+        form(action="/register" method="POST").mt-4
+            input(type="hidden" name="_csrf" value=`${csrfToken}`)
+
+            .form-group.row
+                label.col-sm-2.col-form-label(for="name") Name
+                .col-sm-5
+                    input#name.form-control(type="text" name="name" placeholder="Enter your name" required)
+
+            .form-group.row
+                label.col-sm-2.col-form-label(for="email") Email
+                .col-sm-5
+                    input#email.form-control(type="email" name="email" placeholder="Enter your email" required)
+
+            .form-group.row
+                label.col-sm-2.col-form-label(for="password") Password
+                .col-sm-5
+                    input#password.form-control(type="password" name="password" placeholder="Enter your password" required minlength="6")
+
+            .form-group.row
+                .col-sm-5.offset-sm-2
+                    button.btn.btn-primary(type="submit")
+                        i.fas.fa-user-plus.mr-1
+                        | Register  
