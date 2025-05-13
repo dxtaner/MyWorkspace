@@ -1,0 +1,38 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-primary.fixed-top
+  .container
+    a.navbar-brand(href="/") Shopping
+
+    button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav")
+      span.navbar-toggler-icon
+
+    #navbarNav.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item
+          a.nav-link(class=(path === '/' ? 'active' : ''), href="/") Home
+        li.nav-item
+          a.nav-link(class=(path === '/products' ? 'active' : ''), href="/products") Products  
+        
+        if isAuthenticated
+          li.nav-item
+            a.nav-link(class=(path === '/cart' ? 'active' : ''), href="/cart") Cart  
+          li.nav-item
+            a.nav-link(class=(path === '/orders' ? 'active' : ''), href="/orders") Orders
+
+        if isAdmin
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(href="#" id="adminDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Admin
+            .dropdown-menu(aria-labelledby="adminDropdown")
+              a.dropdown-item(href="/admin/add-product") Add Product
+              a.dropdown-item(href="/admin/products") Admin Products
+              a.dropdown-item(href="/admin/add-category") Add Category
+              a.dropdown-item(href="/admin/categories") Categories
+
+      ul.navbar-nav.ml-auto
+        if isAuthenticated
+          li.nav-item
+            a.nav-link(href="/logout") Logout
+        else 
+          li.nav-item
+            a.nav-link(href="/login") Login
+          li.nav-item
+            a.nav-link(href="/register") Register
