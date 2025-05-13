@@ -1,0 +1,25 @@
+extends ../layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/forms.css")
+
+block content   
+    if errorMessage 
+        .alert.alert-danger.col-sm-7(role="alert") #{errorMessage}
+
+    .container.mt-5
+        h2.text-center Reset Password
+
+        form(action="/reset-password" method="POST").mt-4
+            input(type="hidden" name="_csrf" value=`${csrfToken}`)
+
+            .form-group.row
+                label.col-sm-2.col-form-label(for="email") Email
+                .col-sm-5
+                    input#email.form-control(type="email" name="email" placeholder="Enter your email" required)
+
+            .form-group.row
+                .col-sm-5.offset-sm-2
+                    button.btn.btn-primary(type="submit")
+                        i.fas.fa-paper-plane.mr-1
+                        | Send Reset Link  
