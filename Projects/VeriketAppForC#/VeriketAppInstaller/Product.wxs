@@ -1,0 +1,60 @@
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define Name="Veriket-App" ?>
+  <?define Manufacturer="VeriketApp" ?>
+  <?define ProductVersion="1.0.0.0"?>
+  <?define UpgradeCode="D6BC8D7D-31F2-4A2F-9C85-94E657641416"?>
+  <?define VeriketAppService="..\VeriketAppService"?>
+  <?define VeriketWinFormApp="..\VeriketWinFormApp"?>
+  <?define PlatformProgramFilesFolder="ProgramFilesFolder"?>
+
+  <Product Id="*" Name="$(var.Name)" Manufacturer="$(var.Manufacturer)" Version="$(var.ProductVersion)" UpgradeCode="$(var.UpgradeCode)" Language="1033">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <MediaTemplate EmbedCab="yes" />
+
+    <Feature Id="MainApplication" Title="Main Application" Level="1">
+      <ComponentRef Id="WindowsServiceComponent" />
+      <ComponentRef Id="DesktopComponent" />
+    </Feature>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="$(var.PlatformProgramFilesFolder)">
+        <Directory Id="INSTALLFOLDER" Name="$(var.Manufacturer)">
+          <!-- Windows Service Component -->
+          <Component Id="WindowsServiceComponent" Guid="{F88BBDF2-3E26-4D22-A3C4-55C9504A2A6F}">
+            <File Id="VeriketAppService.exe"
+              Source="$(var.VeriketAppService)\publish\VeriketAppService.exe"
+              KeyPath="yes" />
+
+            <ServiceInstall Id="ServiceInstaller"
+              Type="ownProcess"
+              Vital="yes"
+              Name="VeriketAppService"
+              DisplayName="Veriket Application "
+              Description="Veriket Application Service"
+              Start="auto"
+              ErrorControl="normal"
+              Account="LocalSystem" />
+
+            <ServiceControl Id="StartService"
+              Start="install"
+              Stop="both"
+              Remove="uninstall"
+              Name="VeriketAppService"
+              Wait="no" />
+          </Component>
+
+          <!-- Desktop Application Component -->
+          <Component Id="DesktopComponent" Guid="{A7E7D88F-9DFC-4F78-AD8A-85052D1A53F7}">
+            <File Id="VeriketWinFormApp.exe"
+                  Source="$(var.VeriketWinFormApp)\publish\VeriketWinFormApp.exe"
+                  KeyPath="yes" />
+          </Component>
+
+        </Directory>
+      </Directory>
+    </Directory>
+  </Product>
+</Wix>
