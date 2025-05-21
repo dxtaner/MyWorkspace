@@ -1,0 +1,6 @@
+﻿<Project Sdk="WixToolset.Sdk/4.0.2">
+  <ItemGroup>
+    <ProjectReference Include="..\VeriketAppService\VeriketAppService.csproj" />
+    <ProjectReference Include="..\VeriketWinFormApp\VeriketWinFormApp.csproj" />
+  </ItemGroup>
+</Project>
