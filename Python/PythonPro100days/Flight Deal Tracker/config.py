@@ -1,0 +1,8 @@
+AMADEUS_API_KEY = "CYDbMOONIgEYLJ9aZPGgDdfh5JuaGU1S"
+AMADEUS_API_SECRET = "vADu4eUG08euYOiR"
+
+AMADEUS_ENV = "test"
+
+SHEETY_ENDPOINT = "https://api.sheety.co/f3048c431ac59d3a14e9bd5c9b9f9bad/flightDeals/sayfa1"
+
+ORIGIN_CITY = "IST"
