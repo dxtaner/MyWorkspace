@@ -4,9 +4,9 @@ import smtplib
 import time
 
 MY_EMAIL = ""
-MY_PASSWORD = ""
+MY_PASSWORD = " "
 MY_LAT = 40.1885      
-MY_LONG = 29.0610    
+MY_LONG = 29.0610
 
 def iss_is_overhead():
     """ISS konumunu kontrol eder, senin yakınındaysa True döner."""
