@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.card {
+  border: 2px solid #ddd;
+  padding: 20px;
+  margin-bottom: 30px;
+  width: 300px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.red {
+  background-color: #ffdddd;
+}
+
+.blue {
+  background-color: #ddeaff;
+}
+
+.yellow {
+  background-color: #fff8cc;
+}
