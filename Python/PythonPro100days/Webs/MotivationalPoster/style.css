@@ -1,0 +1,26 @@
+body {
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.poster {
+  width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  color: white;
+}
+
+.poster img {
+  width: 100%;
+  border: 5px solid white;
+}
+
+.poster h1 {
+  font-size: 60px;
+  margin: 20px 0 10px 0;
+}
+
+.poster p {
+  font-size: 24px;
+  color: #cccccc;
+}
