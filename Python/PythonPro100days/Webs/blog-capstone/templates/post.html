@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block content %}
+<div class="post-container">
+  <h1>{{ post.title }}</h1>
+  <h3>{{ post.subtitle }}</h3>
+  <p>{{ post.body }}</p>
+
+  <a class="btn-back" href="{{ url_for('home') }}">← Back to Home</a>
+</div>
+{% endblock %}
