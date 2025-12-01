@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #90b1dc, #0d1e83);
+  min-height: 100vh;
+  padding-bottom: 40px;
+  color: #222;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar h2 {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 15px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  opacity: 0.7;
+}
+
+.content {
+  padding: 50px 40px;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.post-card {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: pointer;
+}
+
+.post-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.post-card h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #222;
+}
+
+.post-card p {
+  color: #555;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #1a73e8;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0b56bc;
+}
+
+.post-container {
+  background: white;
+  padding: 40px;
+  border-radius: 18px;
+  max-width: 850px;
+  margin: 40px auto;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.post-container h1 {
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  text-shadow: none;
+}
+
+.post-container h3 {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.post-container p {
+  line-height: 1.8;
+  color: #333;
+  font-size: 17px;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background: #444;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background: #000;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  .content {
+    padding: 25px 20px;
+  }
+}
