@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TinDog</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link rel="icon" type="image/png" href="images/dog-img.jpg" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="#">TinDog</a>
+
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container text-center pt-5">
+        <h1 class="display-3 fw-bold mb-4">
+          Meet New and Interesting Dogs Nearby
+        </h1>
+        <button class="btn btn-dark btn-lg m-2">Download</button>
+        <button class="btn btn-outline-light btn-lg m-2">Download</button>
+        <div class="iphone-wrapper">
+          <img src="images/iphone6.jpg" class="iphone-img" alt="iphone" />
+        </div>
+      </div>
+    </header>
+
+    <section id="features" class="py-5 text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <i class="bi bi-check-circle-fill feature-icon"></i>
+            <h3 class="fw-bold mt-3">Easy to Use</h3>
+            <p>So easy to use, even your dog could do it.</p>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <i class="bi bi-bullseye feature-icon"></i>
+            <h3 class="fw-bold mt-3">Elite Clientele</h3>
+            <p>We have all the dogs, the greatest dogs.</p>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <i class="bi bi-heart-fill feature-icon"></i>
+            <h3 class="fw-bold mt-3">Guaranteed to Work</h3>
+            <p>Find the love of your dog’s life or your money back.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonial-section py-5 text-white">
+      <div class="container text-center">
+        <h2 class="mb-4">What People Are Saying</h2>
+
+        <div
+          id="carouselExample"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h3 class="mb-3">TinDog changed my life!</h3>
+              <img
+                src="images/lady-img.jpg"
+                class="rounded-circle testimonial-img"
+                alt=""
+              />
+              <em>Beverly, Illinois</em>
+            </div>
+
+            <div class="carousel-item">
+              <h3 class="mb-3">My dog found his soulmate!</h3>
+              <img
+                src="images/dog-img.jpg"
+                class="rounded-circle testimonial-img"
+                alt=""
+              />
+              <em>Rex, California</em>
+            </div>
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="py-5">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-5">A Plan for Every Dog’s Needs</h2>
+
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="card shadow-lg">
+              <div class="card-header">
+                <h3>Chihuahua</h3>
+              </div>
+              <div class="card-body">
+                <h2 class="card-title">$0 / mo</h2>
+                <p>5 Matches per Day</p>
+                <p>10 Messages per Day</p>
+                <p>Unlimited App Usage</p>
+                <button class="btn btn-outline-dark btn-lg w-100">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="card shadow-lg">
+              <div class="card-header">
+                <h3>Labrador</h3>
+              </div>
+              <div class="card-body">
+                <h2 class="card-title">$49 / mo</h2>
+                <p>Unlimited Matches</p>
+                <p>Unlimited Messages</p>
+                <p>Unlimited App Usage</p>
+                <button class="btn btn-dark btn-lg w-100">Get Started</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="card shadow-lg">
+              <div class="card-header">
+                <h3>Mastiff</h3>
+              </div>
+              <div class="card-body">
+                <h2 class="card-title">$99 / mo</h2>
+                <p>Priority Listing</p>
+                <p>Unlimited Messages</p>
+                <p>Unlimited App Usage</p>
+                <button class="btn btn-dark btn-lg w-100">Sign Up</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+      <p>© 2025 TinDog. All Rights Reserved.</p>
+    </footer>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
