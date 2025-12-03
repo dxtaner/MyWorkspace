@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block content %}
+<div class="card">
+  <img
+    src="{{ url_for('static', filename='images/taner.jpg') }}"
+    class="profile-img"
+  />
+
+  <h1 class="title">{{ name }}</h1>
+  <h3 class="subtitle">{{ job }}</h3>
+
+  <p class="location">📍 {{ location }}</p>
+
+  <div class="links">
+    <a href="{{ github }}" target="_blank">GitHub</a>
+    <a href="{{ linkedin }}" target="_blank">LinkedIn</a>
+    <a href="{{ medium }}" target="_blank">Medium</a>
+  </div>
+</div>
+{% endblock %}
