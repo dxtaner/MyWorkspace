@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Higher or Lower Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input {
+        padding: 10px;
+        font-size: 16px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      h2 {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Higher or Lower</h1>
+    <form method="POST">
+      <input
+        type="number"
+        name="guess"
+        placeholder="Enter a number 1-100"
+        required
+      />
+      <button type="submit">Guess</button>
+    </form>
+    {% if message %}
+    <h2>{{ message }}</h2>
+    {% endif %}
+  </body>
+</html>
