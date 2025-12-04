@@ -1,0 +1,83 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 40px 30px;
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h1,
+h2 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+form label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+  outline: none;
+}
+
+form input[type="submit"] {
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #574fd6;
+  transform: translateY(-2px);
+}
+
+a {
+  color: #6c63ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 20px;
+}
