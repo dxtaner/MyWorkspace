@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <h1>Contact Me</h1>
+
+    {% if msg_sent %}
+    <p class="success">Your message has been sent successfully!</p>
+    {% endif %}
+
+    <form action="/contact" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+
+      <input type="email" name="email" placeholder="Your Email" required />
+
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <br />
+    <a href="/" class="btn">Back to Home</a>
+  </body>
+</html>
