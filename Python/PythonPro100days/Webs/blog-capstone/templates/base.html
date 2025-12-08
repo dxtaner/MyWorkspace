@@ -14,8 +14,14 @@
     <nav class="navbar">
       <h2>Taner Blog</h2>
       <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
     </nav>
 
-    <div class="content">{% block content %} {% endblock %}</div>
+    <div class="content">{% block content %}{% endblock %}</div>
+
+    <footer class="footer">
+      <p>© 2025 Taner Blog — All rights reserved.</p>
+    </footer>
   </body>
 </html>
