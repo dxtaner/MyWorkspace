@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block content %}
+<h2>Add a New Cafe</h2>
+<form method="POST" class="mt-3">
+  {{ form.hidden_tag() }}
+
+  <div class="mb-3">
+    {{ form.name.label(class="form-label") }} {{ form.name(class="form-control")
+    }}
+  </div>
+
+  <div class="mb-3">
+    {{ form.map_url.label(class="form-label") }} {{
+    form.map_url(class="form-control") }}
+  </div>
+
+  <div class="mb-3">
+    {{ form.img_url.label(class="form-label") }} {{
+    form.img_url(class="form-control") }}
+  </div>
+
+  <div class="mb-3">
+    {{ form.coffee.label(class="form-label") }} {{
+    form.coffee(class="form-select") }}
+  </div>
+
+  <div class="mb-3">
+    {{ form.wifi.label(class="form-label") }} {{ form.wifi(class="form-select")
+    }}
+  </div>
+
+  <div class="mb-3">
+    {{ form.power.label(class="form-label") }} {{
+    form.power(class="form-select") }}
+  </div>
+
+  {{ form.submit(class="btn btn-primary") }}
+</form>
+{% endblock %}
