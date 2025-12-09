@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+<h2>All Cafes</h2>
+<table class="table table-striped table-hover mt-3">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Map</th>
+      <th>Image</th>
+      <th>Coffee</th>
+      <th>Wifi</th>
+      <th>Power</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for cafe in cafes %}
+    <tr>
+      <td>{{ cafe[0] }}</td>
+      <td><a href="{{ cafe[1] }}" target="_blank">Map</a></td>
+      <td><a href="{{ cafe[2] }}" target="_blank">Image</a></td>
+      <td>{{ cafe[3] }}</td>
+      <td>{{ cafe[4] }}</td>
+      <td>{{ cafe[5] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
