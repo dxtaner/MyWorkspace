@@ -1,0 +1,8 @@
+{% extends "base.html" %} {% block content %}
+<div class="text-center">
+  <h1>Welcome to Coffee & Wifi</h1>
+  <p class="lead">Discover cafes with great coffee, wifi, and power outlets!</p>
+  <a class="btn btn-primary me-2" href="{{ url_for('add') }}">Add a Cafe</a>
+  <a class="btn btn-success" href="{{ url_for('cafes') }}">View Cafes</a>
+</div>
+{% endblock %}
