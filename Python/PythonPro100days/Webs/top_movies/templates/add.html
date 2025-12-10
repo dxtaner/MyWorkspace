@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block content %}
+<h2>Add a Movie</h2>
+
+{% if manual %}
+<form method="POST">
+  {{ form.hidden_tag() }}
+
+  <div class="mb-3">
+    {{ form.title.label }} {{ form.title(class_="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ form.year.label }} {{ form.year(class_="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ form.description.label }} {{ form.description(class_="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ form.rating.label }} {{ form.rating(class_="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ form.img_url.label }} {{ form.img_url(class_="form-control") }}
+  </div>
+
+  {{ form.submit(class_="btn btn-primary") }}
+</form>
+
+{% else %}
+
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <div class="mb-3">
+    {{ form.title.label }} {{ form.title(class_="form-control") }}
+  </div>
+  {{ form.submit(class_="btn btn-primary") }}
+</form>
+
+{% endif %} {% endblock %}
