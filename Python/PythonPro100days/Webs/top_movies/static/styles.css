@@ -1,0 +1,25 @@
+body {
+  background: linear-gradient(135deg, #dcecff 0%, #faf6ff 100%);
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.movie-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card img {
+  height: 360px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.btn {
+  border-radius: 10px;
+}
