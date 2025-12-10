@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<h2>Edit Movie</h2>
+
+<div class="row mt-4">
+  <div class="col-md-4">
+    <img class="img-fluid rounded" src="{{ movie.img_url }}" />
+  </div>
+
+  <div class="col-md-8">
+    <h3>{{ movie.title }}</h3>
+    <p class="text-muted">{{ movie.year }}</p>
+    <p>{{ movie.description }}</p>
+
+    <form method="POST">
+      {{ form.hidden_tag() }}
+
+      <div class="mb-3">
+        {{ form.rating.label }} {{ form.rating(class_="form-control") }}
+      </div>
+      <div class="mb-3">
+        {{ form.review.label }} {{ form.review(class_="form-control") }}
+      </div>
+
+      {{ form.submit(class_="btn btn-success") }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
