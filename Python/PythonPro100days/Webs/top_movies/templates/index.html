@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block content %}
+<h2>My Movie Rankings</h2>
+
+<div class="row mt-4 g-4">
+  {% for movie in movies %}
+  <div class="col-md-4">{% include "components/_movie_card.html" %}</div>
+  {% endfor %}
+</div>
+{% endblock %}
