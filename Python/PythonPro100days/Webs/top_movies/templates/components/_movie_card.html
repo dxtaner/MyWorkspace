@@ -1,0 +1,23 @@
+<div class="card movie-card">
+  <img src="{{ movie.img_url }}" alt="{{ movie.title }}" />
+
+  <div class="card-body">
+    <h5 class="card-title">{{ movie.title }}</h5>
+    <p class="text-muted">{{ movie.year }}</p>
+    <p class="small">{{ movie.description[:150] }}...</p>
+
+    <p><strong>Rating:</strong> {{ movie.rating or '—' }}</p>
+    <p><strong>Ranking:</strong> #{{ movie.ranking or '—' }}</p>
+
+    <a
+      class="btn btn-warning btn-sm"
+      href="{{ url_for('edit', movie_id=movie.id) }}"
+      >Edit</a
+    >
+    <a
+      class="btn btn-danger btn-sm"
+      href="{{ url_for('delete', movie_id=movie.id) }}"
+      >Delete</a
+    >
+  </div>
+</div>
