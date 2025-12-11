@@ -1,13 +1,22 @@
 {% extends "base.html" %} {% block content %}
 
-<h1>Blog Posts</h1>
+<h1 class="mb-4 text-center">Latest Blog Posts</h1>
 
-<div class="posts">
+<div class="row g-4">
   {% for post in posts %}
-  <div class="post-card">
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.subtitle }}</p>
-    <a class="btn" href="{{ url_for('post_detail', id=post.id) }}">Read More</a>
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100">
+      <img
+        src="https://picsum.photos/seed/{{ post.id }}/600/300"
+        class="card-img-top"
+      />
+
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text text-muted">{{ post.subtitle }}</p>
+        <a href="/post/{{ post.id }}" class="btn btn-dark">Read More →</a>
+      </div>
+    </div>
   </div>
   {% endfor %}
 </div>
