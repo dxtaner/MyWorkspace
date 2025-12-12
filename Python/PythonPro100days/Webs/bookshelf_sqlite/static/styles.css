@@ -1,0 +1,116 @@
+body {
+  background: linear-gradient(135deg, #c3d3ff, #e8e8ff);
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  padding: 15px 0;
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.brand-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1b1b1b;
+  letter-spacing: 1px;
+}
+
+.btn-add {
+  background: #4c7cff;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.btn-add:hover {
+  background: #2d5df5;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.book-card {
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 20px;
+  transition: 0.3s;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.book-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.book-author {
+  color: #555;
+  margin-top: -5px;
+}
+
+.rating {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn-edit {
+  background: #ffc04c;
+  border-radius: 10px;
+  padding: 6px 12px;
+  color: black;
+  margin-right: 5px;
+}
+.btn-edit:hover {
+  background: #ffad1f;
+}
+
+.btn-delete {
+  background: #ff4d4d;
+  border-radius: 10px;
+  padding: 6px 12px;
+  color: white;
+}
+.btn-delete:hover {
+  background: #e02f2f;
+}
+
+.form-card {
+  background: rgba(255, 255, 255, 0.35);
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(14px);
+}
+
+.input-glass {
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  backdrop-filter: blur(10px);
+}
+.input-glass:focus {
+  outline: 2px solid #4c7cff;
+}
+
+.btn-submit {
+  background: #4c7cff;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.btn-submit:hover {
+  background: #2d5df5;
+}
