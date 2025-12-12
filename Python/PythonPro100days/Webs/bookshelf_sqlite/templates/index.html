@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block content %}
+<h2 class="page-title">Your Library</h2>
+
+<div class="row g-4 mt-4">
+  {% for book in books %}
+  <div class="col-md-4">
+    <div class="book-card">
+      <h4 class="book-title">{{ book[1] }}</h4>
+      <p class="book-author">by {{ book[2] }}</p>
+
+      <div class="rating">⭐ {{ book[3] }}/10</div>
+
+      <div class="actions mt-3">
+        <a
+          class="btn btn-edit"
+          href="{{ url_for('edit_book', book_id=book[0]) }}"
+        >
+          ✏ Edit
+        </a>
+
+        <a
+          class="btn btn-delete"
+          href="{{ url_for('delete', book_id=book[0]) }}"
+        >
+          🗑 Delete
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %} {% if books|length == 0 %}
+  <div class="alert alert-info text-center mt-4">
+    No books yet. Add your first book!
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}
