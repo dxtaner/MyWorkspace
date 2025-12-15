@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="text-center mt-5">
+  <h1 class="mb-3">Welcome to Flask Authentication App</h1>
+
+  {% if current_user.is_authenticated %}
+  <p class="lead">Logged in as <strong>{{ current_user.name }}</strong></p>
+  <a href="/secret" class="btn btn-dark btn-lg mt-3">Go to Secret Page</a>
+  {% else %}
+  <p class="lead">You are not logged in.</p>
+  <a href="/login" class="btn btn-primary btn-lg mt-3">Login</a>
+  <a href="/register" class="btn btn-outline-dark btn-lg mt-3 ms-3">Register</a>
+  {% endif %}
+</div>
+
+{% endblock %}
