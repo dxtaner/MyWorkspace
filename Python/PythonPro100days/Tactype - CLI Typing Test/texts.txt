@@ -1,0 +1,4 @@
+Python makes it easy to write clean and maintainable code.
+Typing speed improves with consistent daily practice.
+Software development requires patience and problem solving skills.
+Clean code is better than clever code.
