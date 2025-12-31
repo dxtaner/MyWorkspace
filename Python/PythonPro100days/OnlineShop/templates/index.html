@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Online Shop</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>🛒 Online Shop</h1>
+    </header>
+
+    <div class="container">
+      <a class="btn" href="/add">+ Add Product</a>
+
+      <div class="products">
+        {% for product in products %}
+        <div class="product-card">
+          <h3>{{ product.name }}</h3>
+          <p class="price">${{ product.price }}</p>
+          <a href="/product/{{ product.id }}">View Details</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
