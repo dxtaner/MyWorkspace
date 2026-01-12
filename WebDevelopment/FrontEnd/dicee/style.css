@@ -1,0 +1,69 @@
+body {
+  background-color: #393e46;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+.container {
+  width: 70%;
+  margin: auto;
+}
+
+h1 {
+  margin: 30px;
+  font-size: 4rem;
+  color: #4ecca3;
+}
+
+.dice {
+  display: inline-block;
+  margin: 20px;
+}
+
+p {
+  font-size: 2rem;
+  color: #eeeeee;
+}
+
+img {
+  width: 200px;
+}
+
+/* 🎞 ZAR SALLAMA ANİMASYONU */
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* BUTON */
+.btn {
+  margin-top: 30px;
+  padding: 15px 35px;
+  font-size: 1.3rem;
+  background-color: #4ecca3;
+  color: #232931;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #3cb38f;
+}
