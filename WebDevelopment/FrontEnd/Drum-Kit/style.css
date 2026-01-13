@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+  background-color: #283149;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #dbedf3;
+  font-family: Arial, sans-serif;
+}
+
+.set {
+  margin: 10% auto;
+}
+
+.drum {
+  outline: none;
+  border: 10px solid #404b69;
+  font-size: 3rem;
+  font-family: Arial, sans-serif;
+  line-height: 2;
+  font-weight: 900;
+  color: #da0463;
+  border-radius: 15px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* 🎞 BASILMA ANİMASYONU */
+.pressed {
+  box-shadow: 0 3px 4px 0 #dbedf3;
+  opacity: 0.5;
+}
