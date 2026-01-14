@@ -1,0 +1,48 @@
+body {
+  text-align: center;
+  background-color: #011f3f;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#game-container {
+  margin: 5% auto;
+  width: 350px;
+}
+
+h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.btn {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.green {
+  background-color: #00a74a;
+}
+.red {
+  background-color: #9f0f17;
+}
+.yellow {
+  background-color: #cca707;
+}
+.blue {
+  background-color: #094a8f;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  opacity: 0.6;
+}
