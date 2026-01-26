@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EJS Tags</title>
+  </head>
+  <body>
+    <h1>EJS Tags Example</h1>
+
+    <% console.log("Bu satır tarayıcıda görünmez") %>
+
+    <h2><%= dayType %></h2>
+
+    <% if (dayType.includes("Hafta sonu")) { %>
+    <p>Bugün keyfini çıkar 🎉</p>
+    <% } else { %>
+    <p>Odaklanma zamanı ⏰</p>
+    <% } %>
+  </body>
+</html>
