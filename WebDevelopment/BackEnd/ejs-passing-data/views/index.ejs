@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Passing Data</title>
+  </head>
+  <body>
+    <h1>Passing Data to EJS</h1>
+
+    <h2><%= advice %></h2>
+
+    <p>Bugünün sayısal değeri: <%= day %></p>
+
+    <% if (day === 0 || day === 6) { %>
+    <p>Bugün hafta sonu 🎉</p>
+    <% } else { %>
+    <p>Bugün hafta içi ⏰</p>
+    <% } %>
+  </body>
+</html>
