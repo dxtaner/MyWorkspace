@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <%- include("partials/header", { title: pageTitle }) %>
+
+  <body>
+    <h2>Merhaba <%= userName %> 👋</h2>
+    <p>Burası EJS ana sayfası</p>
+
+    <a href="/about">Hakkımda</a>
+
+    <%- include("partials/footer") %>
+  </body>
+</html>
