@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Axios + EJS</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <h1>Posts from API</h1>
+
+  <% posts.forEach(post => { %>
+    <div class="card">
+      <h3><%= post.title %></h3>
+      <p><%= post.body %></p>
+    </div>
+  <% }) %>
+
+</body>
+</html>
