@@ -1,0 +1,21 @@
+{
+  "name": "blog-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "method-override": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
