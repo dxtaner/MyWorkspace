@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Blog</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <h1>📝 My Blog</h1>
+
+  <a class="btn" href="/new">➕ New Article</a>
+
+  <div class="articles">
+    <% if (articles.length === 0) { %>
+      <p>No articles yet.</p>
+    <% } %>
+
+    <% articles.forEach(article => { %>
+      <div class="card">
+
+        <h2><%= article.title %></h2>
+
+        <p>
+          <%= article.content.length > 100
+              ? article.content.substring(0, 100) + "..."
+              : article.content %>
+        </p>
+
+        <div class="actions">
+          <a href="/articles/<%= article.id %>">Read</a>
+          |
+          <a href="/articles/<%= article.id %>/edit">Edit</a>
+
+          <form
+            action="/articles/<%= article.id %>?_method=DELETE"
+            method="POST"
+            style="display:inline;"
+          >
+            <button type="submit" onclick="return confirm('Delete this article?')">
+              Delete
+            </button>
+          </form>
+        </div>
+
+      </div>
+    <% }) %>
+  </div>
+
+</body>
+</html>
