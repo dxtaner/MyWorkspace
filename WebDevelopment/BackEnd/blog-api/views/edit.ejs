@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Article</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <h1>Edit Article</h1>
+
+    <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
+      <input type="text" name="title" value="<%= article.title %>" required />
+      <textarea name="content" required><%= article.content %></textarea>
+      <button type="submit">Update</button>
+    </form>
+
+    <a href="/">⬅ Back</a>
+  </body>
+</html>
