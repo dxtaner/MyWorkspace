@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Article</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <h1>Create New Article</h1>
+
+    <form action="/articles" method="POST">
+      <input type="text" name="title" placeholder="Title" required />
+      <textarea name="content" placeholder="Content" required></textarea>
+      <button type="submit">Create</button>
+    </form>
+
+    <a href="/">⬅ Back</a>
+  </body>
+</html>
