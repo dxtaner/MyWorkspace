@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Users</title>
+</head>
+<body>
+
+  <h1>User List</h1>
+
+  <ul>
+    <% users.forEach(user => { %>
+      <li>
+        <strong><%= user.name %></strong> <br />
+        City: <%= user.city %> <br />
+        Skills:
+        <ul>
+          <% user.skills.forEach(skill => { %>
+            <li><%= skill %></li>
+          <% }) %>
+        </ul>
+      </li>
+      <hr />
+    <% }) %>
+  </ul>
+
+</body>
+</html>
