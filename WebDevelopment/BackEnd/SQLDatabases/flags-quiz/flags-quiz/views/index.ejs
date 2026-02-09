@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="/css/style.css" />
+<div class="container">
+  <h2>Score: <%= score %></h2>
+  <img src="<%= country.flag %>" width="200" />
+  <form action="/answer" method="POST">
+    <input type="text" name="answer" placeholder="Country name" required />
+    <input type="hidden" name="correct" value="<%= country.name %>" />
+    <button>Submit</button>
+  </form>
+</div>
