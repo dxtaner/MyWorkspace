@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="/css/style.css" />
+<div class="container">
+  <% if (correct) { %>
+  <h2 class="correct">Correct! 🎉</h2>
+  <% } else { %>
+  <h2 class="wrong">Wrong! Correct: <%= correctName %></h2>
+  <% } %>
+  <a href="/">Next Question</a>
+</div>
