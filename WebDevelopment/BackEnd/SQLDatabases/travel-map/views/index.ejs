@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Travel Map Tracker</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🌍 Travel Map Tracker</h1>
+
+      ```
+      <form action="/add" method="POST">
+        <input name="country" placeholder="Enter country name" required />
+        <button>Add Country</button>
+      </form>
+
+      <div id="map"></div>
+      ```
+    </div>
+
+    <script>
+      const visitedCountries = <%- JSON.stringify(visited) %>;
+
+      fetch("/map/world.svg")
+        .then(res => res.text())
+        .then(svg => {
+          document.getElementById("map").innerHTML = svg;
+
+          // Boyama işlemi
+          visitedCountries.forEach(c => {
+            const el = document.getElementById(c.code);
+            if (el) {
+              el.style.fill = "#00ff88";
+              el.style.stroke = "#111";
+              el.style.strokeWidth = "0.5";
+            }
+          });
+        });
+    </script>
+  </body>
+</html>
