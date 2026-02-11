@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div class="container">
+  <% if(result==="correct"){ %>
+    <div class="correct">✅ Correct!</div>
+  <% } else { %>
+    <div class="wrong">❌ Correct: <%= correct %></div>
+  <% } %>
+
+  <form action="/" method="GET">
+    <button>Next Question</button>
+  </form>
+</div>
+</body>
+</html>
