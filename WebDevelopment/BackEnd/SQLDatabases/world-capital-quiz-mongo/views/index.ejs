@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🌍 World Capital Quiz</h1>
+      <div>Question <%= qNumber %> / 10</div>
+      <div class="score">Score: <%= score %></div>
+
+      <div class="timer">⏳ <span id="time">10</span>s</div>
+
+      <h2><%= question.country %></h2>
+
+      <form method="POST">
+        <input name="answer" required />
+        <input type="hidden" name="capital" value="<%= question.capital %>" />
+        <button>Submit</button>
+      </form>
+    </div>
+
+    <script>
+      let t = 10;
+      setInterval(() => {
+        t--;
+        document.getElementById("time").innerText = t;
+        if (t === 0) document.querySelector("form").submit();
+      }, 1000);
+    </script>
+  </body>
+</html>
