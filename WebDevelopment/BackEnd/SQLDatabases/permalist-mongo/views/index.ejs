@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Permalist Pro</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>Permalist Pro 📝</h1>
+
+<form action="/add" method="POST" class="add-form">
+  <input name="task" placeholder="New Task..." required>
+  <button>Add</button>
+</form>
+
+<ul class="task-list">
+  <% tasks.forEach(task => { %>
+    <li class="<%= task.completed ? 'done' : '' %>">
+
+      <form action="/toggle" method="POST">
+        <input type="hidden" name="id" value="<%= task._id %>">
+        <input type="checkbox" onChange="this.form.submit()" <%= task.completed ? 'checked' : '' %>>
+      </form>
+
+      <span><%= task.title %></span>
+
+      <small>
+        <%= new Date(task.createdAt).toLocaleDateString() %>
+      </small>
+
+      <form action="/edit" method="POST" class="edit-form">
+        <input type="hidden" name="id" value="<%= task._id %>">
+        <input name="updatedTask" placeholder="Edit task">
+        <button>✏️</button>
+      </form>
+
+      <form action="/delete" method="POST">
+        <input type="hidden" name="id" value="<%= task._id %>">
+        <button>❌</button>
+      </form>
+
+    </li>
+  <% }) %>
+</ul>
+
+</body>
+</html>
