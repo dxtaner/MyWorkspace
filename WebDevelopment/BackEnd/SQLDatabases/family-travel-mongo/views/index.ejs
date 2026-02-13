@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Family Travel Tracker</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<h1>Family Travel Tracker 🌍</h1>
+
+<h2>Add User</h2>
+<form action="/add-user" method="POST">
+  <input name="name" placeholder="User Name" required />
+  <button>Add User</button>
+</form>
+
+<h2>Add Travel</h2>
+<form action="/add-country" method="POST">
+  <input name="country" placeholder="Country (Germany, Italy...)" required />
+
+  <select name="userId">
+    <% users.forEach(user => { %>
+      <option value="<%= user._id %>"><%= user.name %></option>
+    <% }) %>
+  </select>
+
+  <button>Add Travel</button>
+</form>
+
+<div>
+  <%- include("../public/world.svg") %>
+</div>
+
+<script>
+  const visited = <%- JSON.stringify(visitedCodes) %>;
+
+  visited.forEach(code => {
+    const el = document.getElementById(code);
+    if (el) el.style.fill = "orange";
+  });
+</script>
+
+</body>
+</html>
