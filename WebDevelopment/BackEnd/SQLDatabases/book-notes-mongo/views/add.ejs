@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/style.css" />
+
+<div class="form-container">
+  <h1>➕ Add New Book</h1>
+
+  <form action="/add" method="POST" class="form-card">
+    <input name="title" placeholder="Book Title" required />
+    <input name="author" placeholder="Author" required />
+
+    <label>⭐ Rating</label>
+    <input name="rating" type="number" min="1" max="5" required />
+
+    <textarea
+      name="notes"
+      placeholder="Your notes about this book..."
+    ></textarea>
+
+    <button type="submit">Add Book</button>
+    <a href="/">⬅ Back</a>
+  </form>
+</div>
