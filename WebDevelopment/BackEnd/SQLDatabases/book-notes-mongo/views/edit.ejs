@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/style.css" />
+
+<div class="form-container">
+  <h1>✏️ Edit Book</h1>
+
+  <form
+    action="/edit/<%= book._id %>?_method=PUT"
+    method="POST"
+    class="form-card"
+  >
+    <input name="title" value="<%= book.title %>" required />
+    <input name="author" value="<%= book.author %>" required />
+
+    <label>⭐ Rating</label>
+    <input
+      name="rating"
+      type="number"
+      min="1"
+      max="5"
+      value="<%= book.rating %>"
+    />
+
+    <textarea name="notes"><%= book.notes %></textarea>
+
+    <button type="submit">Update Book</button>
+    <a href="/">⬅ Back</a>
+  </form>
+</div>
