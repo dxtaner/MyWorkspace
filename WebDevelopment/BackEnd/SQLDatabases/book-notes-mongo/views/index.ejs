@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/css/style.css">
+
+<h1>📚 My Book Notes</h1>
+
+<form>
+  <input name="search" placeholder="Search..." value="<%= search %>">
+</form>
+
+<div>
+  <a href="/?sort=rating">⭐ Rating</a>
+  <a href="/?sort=dateRead">📅 Date</a>
+  <a href="/?sort=title">🔤 Title</a>
+</div>
+
+<a href="/add">Add Book</a>
+
+<div class="grid">
+<% books.forEach(book => { %>
+  <div class="card">
+    <img src="https://covers.openlibrary.org/b/title/<%= book.coverId %>-L.jpg">
+    <h2><%= book.title %></h2>
+    <p><%= book.author %></p>
+
+    <div>
+      <% for(let i=0;i<book.rating;i++){ %>⭐<% } %>
+    </div>
+
+    <span class="badge">
+      <%= new Date(book.dateRead).toDateString() %>
+    </span>
+
+    <p><%= book.notes %></p>
+
+    <a href="/edit/<%= book._id %>">Edit</a>
+
+    <form action="/delete/<%= book._id %>?_method=DELETE" method="POST">
+      <button>Delete</button>
+    </form>
+  </div>
+<% }) %>
+</div>
