@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+  background: #0f2027;
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
+input,
+button {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 6px;
+  border: none;
+}
+button {
+  background: #ff6b6b;
+  color: white;
+}
+a {
+  color: #1dd1a1;
+  margin: 10px;
+  display: inline-block;
+}
