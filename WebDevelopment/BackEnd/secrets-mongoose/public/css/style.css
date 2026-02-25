@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  min-height: 100vh;
+  padding: 40px;
+  text-align: center;
+}
+
+.container {
+  margin: auto;
+  max-width: 600px;
+}
+h1 {
+  margin-bottom: 20px;
+}
+a,
+button {
+  background: #ff6b6b;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 6px;
+  display: inline-block;
+  transition: 0.3s;
+}
+a:hover,
+button:hover {
+  background: #ff4757;
+  transform: translateY(-2px);
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+.form-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+textarea {
+  height: 80px;
+  resize: none;
+}
+.secret-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 10px;
+}
