@@ -1,0 +1,19 @@
+2026-03-14 03:10:17,136 - INFO - ====== WebDriver manager ======
+2026-03-14 03:10:18,129 - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-14 03:10:18,332 - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-14 03:10:18,492 - INFO - Driver [C:\Users\taner\.wdm\drivers\chromedriver\win64\146.0.7680.76\chromedriver-win32/chromedriver.exe] found in cache
+2026-05-20 14:10:26,858 - INFO - ====== WebDriver manager ======
+2026-05-20 14:10:28,277 - INFO - Get LATEST chromedriver version for google-chrome
+2026-05-20 14:10:28,711 - INFO - Get LATEST chromedriver version for google-chrome
+2026-05-20 14:10:28,921 - INFO - There is no [win64] chromedriver "148.0.7778.178" for browser google-chrome "148.0.7778" in cache
+2026-05-20 14:10:28,922 - INFO - Get LATEST chromedriver version for google-chrome
+2026-05-20 14:10:29,469 - INFO - WebDriver version 148.0.7778.178 selected
+2026-05-20 14:10:29,473 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/148.0.7778.178/win32/chromedriver-win32.zip
+2026-05-20 14:10:29,474 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/148.0.7778.178/win32/chromedriver-win32.zip
+2026-05-20 14:10:29,974 - INFO - Driver downloading response is 200
+2026-05-20 14:10:32,365 - INFO - Get LATEST chromedriver version for google-chrome
+2026-05-20 14:10:32,753 - INFO - Driver has been saved in cache [C:\Users\taner\.wdm\drivers\chromedriver\win64\148.0.7778.178]
+2026-05-20 14:14:49,721 - INFO - ====== WebDriver manager ======
+2026-05-20 14:14:58,298 - INFO - Get LATEST chromedriver version for google-chrome
+2026-05-20 14:14:58,543 - INFO - Get LATEST chromedriver version for google-chrome
+2026-05-20 14:14:58,734 - INFO - Driver [C:\Users\taner\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
